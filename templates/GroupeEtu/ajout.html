@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajout d'un étudiant à un groupe</title>
+</head>
+<link rel="stylesheet" href="{% static 'GroupeEtu/ajout.css' %}"/>
+<body>
+<h1> Saisie d'un nouveau groupe d'étudiants : </h1>
+    {% if id is not none %}
+        <form method="post" action="/GroupeEtu/updatetraitement/{{id}}/">
+    {% else %}
+            <form method="post" action="/GroupeEtu/traitement/">
+    {% endif %}
+                {% csrf_token %}
+        {{ form.as_ul }}
+<a class="retour" type="button" href="/GroupeEtu"> Retour accueil </a>
+        <input type="submit" value="Entrer les données"\>
+
+    </form>
+</body>
+</html>

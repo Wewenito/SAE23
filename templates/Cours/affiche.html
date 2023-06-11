@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Information sur {{Cours.Titre_cours}}</title>
+</head>
+<link rel="stylesheet" href="{% static 'Cours/affiche.css' %}"/>
+<body>
+<h2> {{Cours.Titre_cours}} </h2>
+<aside>
+<p> Titre du cours : {{Cours.Titre_cours}} </p>
+<p> Date du cours : {{Cours.Date}} </p>
+<p> Durée du cours : {{Cours.Duree}}
+    <a class="retour" type="button" href="/Cours"> Retour accueil </a>
+
+</aside>
+</p>
+</body>
+</html>

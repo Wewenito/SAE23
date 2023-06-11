@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>index</title>
+</head>
+
+<body>
+    <h1> Gestion des groupes des étudiants </h1>
+    <a href="/GroupeEtu/ajout"> Ajout groupe d'étudiants </a>
+    <ol> 
+        {% for l in liste %}
+            <li class = "liste"> {{l}} <a class = "info" href="/GroupeEtu/affiche/{{l.id}}/"> Afficher les informations </a> | <a class = "update" href="/GroupeEtu/update/{{l.id}}/"> Mettre à jour </a> | <a class = "delete" href="/GroupeEtu/delete/{{l.id}}/"> Supprimer </a> </li>
+        {% endfor %}
+    </ol>
+</body>
+
+</html>

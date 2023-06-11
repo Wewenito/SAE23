@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Information sur {Archives.Inspection_finie}</title>
+</head>
+<link rel="stylesheet" href="{% static 'Archives/affiche.css' %}"/>
+<body>
+<h2> {{Archives.Inspection_finie}} </h2>
+<aside>
+<p> Inspection finie ? : {{Archives.Inspection_finie}} </p>
+
+    <a class="retour" type="button" href="/Archives"> Retour accueil </a>
+
+</aside>
+</p>
+</body>
+</html>

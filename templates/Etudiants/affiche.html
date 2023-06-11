@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Information sur {{Enseignant.nom}}</title>
+</head>
+<link rel="stylesheet" href="{% static 'Etudiants/affiche.css' %}"/>
+<body>
+<h2> {{Etudiants.nom_etu}} {{Etudiants.prenom}} </h2>
+<aside>
+<p>Nom : {{Etudiants.nom_etu}} </p>
+<p>Prénom : {{Etudiants.prenom}} </p>
+<p>Mail : {{Etudiants.mail}}</p>
+<p>Photo : {{Etudiants.photo}}</p>
+<p>Description : {{Etudiants.description}}</p>
+<p>Adresse : {{Etudiants.adresse}}</p>
+<p>Téléphone : {{Etudiants.telephone}}</p>
+<p>Boursier : {{Etudiants.boursier}}</p>
+
+    <a class="retour" type="button" href="/Etudiants"> Retour accueil </a>
+
+</aside>
+</p>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>index</title>
+</head>
+
+<body>
+    <h1> Gestion des Absences </h1>
+    <a href="/Absences/ajout"> Ajout d'une absence </a>
+    <ol> 
+        {% for l in liste %}
+            <li class = "liste"> {{l}} <a class = "info" href="/Absences/affiche/{{l.id}}/"> Afficher les informations </a> | <a class = "update" href="/Absences/update/{{l.id}}/"> Mettre à jour </a> | <a class = "delete" href="/Absences/delete/{{l.id}}/"> Supprimer </a> </li>
+        {% endfor %}
+    </ol>
+</body>
+
+</html>

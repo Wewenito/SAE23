@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Information sur {{Enseignant.nom}}</title>
+</head>
+<link rel="stylesheet" href="{% static 'enseignants/affiche.css' %}"/>
+<body>
+<h2> {{Enseignant.nom}} </h2>
+<aside>
+<p> Nom : {{Enseignant.nom}} </p>
+<p> Prénom : {{Enseignant.prenom}} </p>
+<p> Mail : {{Enseignant.mail}}
+    <a class="retour" type="button" href="/enseignants"> Retour accueil </a>
+
+</aside>
+</p>
+</body>
+</html>

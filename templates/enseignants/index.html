@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>index</title>
+</head>
+
+<body>
+    <h1> Gestion des enseignants </h1>
+    <a href="/enseignants/ajout"> Ajout enseignant </a>
+    <ol> 
+        {% for l in liste %}
+            <li class = "liste"> {{l}} <a class = "info" href="/enseignants/affiche/{{l.id}}/"> Afficher les informations </a> | <a class = "update" href="/enseignants/update/{{l.id}}/"> Mettre à jour </a> | <a class = "delete" href="/enseignants/delete/{{l.id}}/"> Supprimer </a> </li>
+        {% endfor %}
+    </ol>
+</body>
+
+</html>

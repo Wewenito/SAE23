@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Archives</title>
+</head>
+<link rel="stylesheet" href="{% static 'Archives/ajout.css' %}"/>
+<body>
+<h1> Archives : </h1>
+    {% if id is not none %}
+        <form method="post" action="/Archives/updatetraitement/{{id}}/">
+    {% else %}
+            <form method="post" action="/Archives/traitement/">
+    {% endif %}
+                {% csrf_token %}
+        {{ form.as_ul }}
+<a class="retour" type="button" href="/Archives"> Retour accueil </a>
+        <input type="submit" value="Entrer les données"\>
+
+    </form>
+</body>
+</html>

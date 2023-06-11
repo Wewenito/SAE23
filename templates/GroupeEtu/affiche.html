@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Information sur {{GroupeEtu.nom}}</title>
+</head>
+<link rel="stylesheet" href="{% static 'GroupeEtu/affiche.css' %}"/>
+<body>
+<h2> {{GroupeEtu.nom_getu}} </h2>
+<aside>
+<p> Nom du groupe : {{GroupeEtu.nom_getu}} </p>
+    <a class="retour" type="button" href="/GroupeEtu"> Retour accueil </a>
+
+</aside>
+</p>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Absences</title>
+</head>
+<link rel="stylesheet" href="{% static 'Absences/ajout.css' %}"/>
+<body>
+<h1> Ajout d'une Absence : </h1>
+    {% if id is not none %}
+        <form method="post" action="/Absences/updatetraitement/{{id}}/">
+    {% else %}
+            <form method="post" action="/Absences/traitement/">
+    {% endif %}
+                {% csrf_token %}
+        {{ form.as_ul }}
+<a class="retour" type="button" href="/Absences"> Retour accueil </a>
+        <input type="submit" value="Entrer les données"\>
+
+    </form>
+</body>
+</html>

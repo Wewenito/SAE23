@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Information sur l'Absence</title>
+</head>
+<link rel="stylesheet" href="{% static 'Absences/affiche.css' %}"/>
+<body>
+<h2> Absence </h2>
+<aside>
+<p> Explication : {{Absences.Explication}} </p>
+<p> Justifie_bool : {{Absences.Justifie_bool}} </p>
+<p> Justif_url : {{Absences.Justif_url}} </p>
+<p> Commentaire_enseignant : {{Absences.Commentaire_enseignant}} </p>
+<p> Inspection_terminee : {{Absences.Inspection_terminee}} </p>
+
+    <a class="retour" type="button" href="/Absences"> Retour accueil </a>
+
+</aside>
+</p>
+</body>
+</html>

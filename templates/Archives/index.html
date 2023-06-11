@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>index</title>
+</head>
+
+<body>
+    <h1> Gestion des Archives </h1>
+    <a href="/Archives/ajout"> Ajout d'une absence dans les archives </a>
+    <ol> 
+        {% for l in liste %}
+            <li class = "liste"> {{l}} <a class = "info" href="/Archives/affiche/{{l.id}}/"> Afficher les informations </a> | <a class = "update" href="/Archives/update/{{l.id}}/"> Mettre à jour </a> | <a class = "delete" href="/Archives/delete/{{l.id}}/"> Supprimer </a> </li>
+        {% endfor %}
+    </ol>
+</body>
+
+</html>

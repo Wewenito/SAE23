@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajout d'un Etudiant</title>
+</head>
+<link rel="stylesheet" href="{% static 'Etudiants/ajout.css' %}"/>
+<body>
+<h1> Saisie d'un nouvel Etudiant : </h1>
+    {% if id is not none %}
+        <form method="post" action="/Etudiants/updatetraitement/{{id}}/">
+    {% else %}
+            <form method="post" action="/Etudiants/traitement/">
+    {% endif %}
+                {% csrf_token %}
+        {{ form.as_ul }}
+<a class="retour" type="button" href="/Etudiants"> Retour accueil </a>
+        <input type="submit" value="Entrer les données"\>
+
+    </form>
+</body>
+</html>
