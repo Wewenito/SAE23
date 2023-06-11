@@ -9,26 +9,46 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="{% static 'BOOTSTRAP/js_BOOTSTRAP/bootstrap.min.js' %}"></script>
         <link rel="stylesheet" type="text/css" href="{% static 'BOOTSTRAP/css_BOOTSTRAP/bootstrap.min.css' %}" > 
-        <link rel="stylesheet" type="text/css" href="{% static 'PROFIL/stylescetu.css'%}">
+        <link rel="stylesheet" type="text/css" href="{% static 'AJOUT/stylesajgrp.css'%}">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
-        <title>GESTION ABSENCES [PROFIL ETU]</title>
+        <title>GESTION ABSENCES [PROFIL ENS]</title>
 </head>
 
 <body>
 
     <header class="navbar navbar-dark bg-dark" id='headermainp'>
+    <div id="headerleft">
         <div class="bouttonsmain">
             <a href='/mainpage' class="new-item active"> <button type="button" id='menu'> Log Out</button> </a>
         </div>
 
         <span class='titre'> Dub STEM Management School </span>
+    </div>
 
-        <a href='/profil-ens' class="userimge"> <img src="{% static 'images/absences_p/etudiant.jpg' %}" type='image/jpeg' class="rounded-circle" id='userimg'> </a> 
+    <div id="headerright">
+        <div id="dropdownlinks">
+            <div class="dropdown">
+                <a class="btn btn-info dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Ajouter...
+                </a>
+
+                <div class="dropdown-menu"  aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item" href="/profil-ens/ajout-etu">Un étudiant</a>
+                    <a class="dropdown-item" href="/profil-ens/ajout-grp">Un groupe</a>
+                    <a class="dropdown-item" href="/profil-ens/ajout-crs">Un cours</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="limagela">
+            <a href='/profil-ens' class="userimge"> <img src="{% static 'images/absences_p/enseignant.png' %}" type='image/png' class="rounded-circle" id='userimg'> </a> 
+        <div>
+    </div>
 
     </header>
 
@@ -56,8 +76,8 @@
     
                 <div class="form-group col-6">
                     <label for="id_groupe">Groupe (Clef):</label>
-                    <input type="text" class="form-control inp" id="id_groupe_non_modif" name="groupe" readonly value="non modifiable juste affiché">
-                </div>                
+                    <input type="text" class="form-control inp" id="id_groupe" name="groupe" required>
+                </div>
             </div>
     
             <div class="form-row">
@@ -90,7 +110,23 @@
         </form>      
     </div>
     
-
+    <div class="row" id="liste">
+        <div class="col-4" id="choixliste">
+          <div class="list-group" id="list-tab" role="tablist">
+            <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Groupes</a>
+            <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Etudiants</a>
+            <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Cours</a>
+          </div>
+        </div>
+        <div class="col-8" id="infoliste">
+          <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list"> liste groupes étudiants existants </div>
+            <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">liste étudiants existants</div>
+            <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">liste cours existants</div>
+          </div>
+        </div>
+      </div>
+    </div>
 
 <div>
     <nav class="navbar navbar-dark bg-primary" id="navbardown">

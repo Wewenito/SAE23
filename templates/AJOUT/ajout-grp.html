@@ -9,7 +9,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="{% static 'BOOTSTRAP/js_BOOTSTRAP/bootstrap.min.js' %}"></script>
         <link rel="stylesheet" type="text/css" href="{% static 'BOOTSTRAP/css_BOOTSTRAP/bootstrap.min.css' %}" > 
-        <link rel="stylesheet" type="text/css" href="{% static 'PROFIL/stylespens.css'%}">
+        <link rel="stylesheet" type="text/css" href="{% static 'AJOUT/stylesajgrp.css'%}">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -46,50 +46,65 @@
         </div>
 
         <div id="limagela">
-            <a href='/profil-ens/custom' class="userimge"> <img src="{% static 'images/absences_p/enseignant.png' %}" type='image/png' class="rounded-circle" id='userimg'> </a> 
+            <a href='/profil-ens' class="userimge"> <img src="{% static 'images/absences_p/enseignant.png' %}" type='image/png' class="rounded-circle" id='userimg'> </a> 
         <div>
     </div>
 
     </header>
 
     
-<div class='tout'>
-    <div id="absences">
-    
-        <div class="cases" id="case1">
-            <div id="justif">
-                <div id="justificatif">
-                    <div id="titrejustif">
-                        <h1> CLASSE </h1>
-                        <h2> ANNEE YEAR/YEAR <h2>
-                    </div>
-
-                    <div id="txtjustif">
-                        <p> DATE </p>
-                        <p> NOM </p>
-                        <p> PRENOM(s) </p>
-                        <p> DESCRIPTION JUSTIFICATIF (CHAMP A REMPLIR TRES LARGE) </p>
-                    </div>
-                </div>
-                <div id="basfichier">
-                    <div id="remisefichier">
-                        <button id="invbutton"> <img src="{% static 'images/absences_p/fichier.png' %}" type='image/png' class="img-thumbnail" id='fichimg'> </button> <!-- IMAGE LIEE AU FICHIER REMIS-->
-                    </div> 
-                    <div id="ajoutfichier">
-                        <button id="fichierabsence"> FICHIER DE JUSTIFICATION AFFICHAGE</button> 
-                        <!-- dans la mesure du possible, on appuie dessus et ça affiche le contenu du fichier, soit sur une nouvelle page, soit ici directement (ce que je préfèrerais). 
-                            sinon on laissera juste l'icone qui deviendra un boutton-->
-                    </div>
-                </div>
-                <div id="valid">
-                    <button id="accepter"> Accepter </button>
-                    <button id="refuser"> Refuser </button>
-                </div>
+    <div class='tout'>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+              <label for="id_nom">Nom du cours:</label>
+              <input type="text" class="form-control" id="id_nom" name="nom" required>
             </div>
+            <div class="form-group">
+              <label for="id_date">Date :</label>
+              <input type="text" class="form-control" id="id_date" name="date" required>
+            </div>
+            <div class="form-group">
+              <label for="id_ens">Ens : (Clef)</label>
+              <input type="email" class="form-control" id="id_ens" name="ens" required>
+            </div>
+            <div class="form-group">
+                <label for="id_groupe">Groupe :</label>
+                <input type="text" class="form-control" id="id_groupe" name="groupe" required>
+            </div>
+            <div class="form-group">
+                <label for="id_durée">Durée :</label>
+                <input type="text" class="form-control" id="id_durée" name="durée" required>
+            </div>
+              <div id="submitbutton">
+                <br>
+                <button type="submit" class="btn btn-primary">Mettre à jour</button>
+              </div>
+            </div>
+        </form>
+    
+    
+        <div class="row" id="liste">
+            <div class="col-4" id="choixliste">
+              <div class="list-group" id="list-tab" role="tablist">
+                <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Groupes</a>
+                <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Etudiants</a>
+                <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Cours</a>
+              </div>
+            </div>
+            <div class="col-8" id="infoliste">
+              <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list"> liste groupes étudiants existants </div>
+                <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">liste étudiants existants</div>
+                <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">liste cours existants</div>
+              </div>
+            </div>
+          </div>
         </div>
+          
+    </div>
 
-    </div>  
-</div>
+
 
 
 <div>

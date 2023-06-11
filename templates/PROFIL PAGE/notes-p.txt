@@ -12,3 +12,6 @@
     
 - polices d'écriture
 
+
+- pour afficher ce qu'on veut dans un input il suffit d'écrire dedans value="id.prof" (exemple)
+
