@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    {% load static %}
+        
+
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="{% static 'BOOTSTRAP/js_BOOTSTRAP/bootstrap.min.js' %}"></script>
+        <link rel="stylesheet" type="text/css" href="{% static 'BOOTSTRAP/css_BOOTSTRAP/bootstrap.min.css' %}" > 
+        <link rel="stylesheet" type="text/css" href="{% static 'PROFIL/stylespe.css'%}">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+        <title>GESTION ABSENCES [PROFIL ETU]</title>
+</head>
+
+<body>
+
+    <header class="navbar navbar-dark bg-dark" id='headermainp'>
+        <div class="bouttonsmain">
+            <a href='/mainpage' class="new-item active"> <button type="button" id='menu'> Log Out</button> </a>
+        </div>
+
+        <span class='titre'> Dub STEM Management School </span>
+
+        <a href='/profil-etu/custom' class="userimge"> <img src="{% static 'images/absences_p/etudiant.jpg' %}" type='image/jpeg' class="rounded-circle" id='userimg'> </a> 
+
+    </header>
+
+    
+<div class='tout'>
+    <div id="absences">
+    
+        <div class="cases" id="case1">
+            <div id="justif">
+                <div id="justificatif">
+                    <div id="titrejustif">
+                        <h1> CLASSE </h1>
+                        <h2> ANNEE YEAR/YEAR <h2>
+                    </div>
+
+                    <div id="txtjustif">
+                        <p> DATE </p>
+                        <p> NOM </p>
+                        <p> PRENOM(s) </p>
+                        <p> DESCRIPTION JUSTIFICATIF (CHAMP A REMPLIR TRES LARGE) </p>
+                    </div>
+                </div>
+                <div id="basfichier">
+                    <div id="remisefichier">
+                        <button id="invbutton"> <img src="{% static 'images/absences_p/fichier.png' %}" type='image/png' class="img-thumbnail" id='fichimg'> </button> <!-- IMAGE LIEE AU FICHIER REMIS-->
+                    </div> 
+                    <div id="ajoutfichier">
+                        <button id="fichierabsence"> FICHIER DE JUSTIFICATION AFFICHAGE</button> 
+                        <!-- dans la mesure du possible, on appuie dessus et ça affiche le contenu du fichier, soit sur une nouvelle page, soit ici directement (ce que je préfèrerais). 
+                            sinon on laissera juste l'icone qui deviendra un boutton-->
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div id="case2" class="cases">
+                <div id="droite">
+                    <h3> NOTIFICATIONS</h3>
+                    <div id="historiqueabsences">
+                        <div id="envoye" class='notif'>
+                            <p> JUSTIFICATION ENVOYéE </p>
+                        </div>
+                        <div id="accepte" class='notif'>
+                            <p> JUSTIFICATIF ACCEPTé   </p>
+                        </div>
+                        <div id="refuse" class='notif'>
+                            <p> JUSTIFICATIF Refusé    </p>
+                        </div>
+                    </div>
+                </div>
+            <div>
+                
+                
+                
+                <!-- J'imagine ici une indication dès qu'une absence a été rendue, et 3 types de "notifications". 
+                    Justificatif rendu, justificatif approuvé, justificatif non approuvé, en fonction de ce que note le prof.
+                    Ca pourrait apparaître en rouge, vert et bleu, en fonction de l'action faite par l'étudiant ou l'enseignant -->
+            </div>
+        </div>
+    </div>  
+</div>
+
+
+<div>
+    <nav class="navbar navbar-dark bg-primary" id="navbardown">
+          <div class="basenbas">
+              <div class="fin">
+                <h4>Contact</h4>
+                <p>Adresse : 123 BassDropAvenue -  France</p>
+                <p>Téléphone : +33 03 68 91 45 18</p>
+                <p>Email : dubstem@mail.com</p>
+              </div>
+              <div class="fin">
+                <h4>Réseaux sociaux</h4>
+                  <a href='https://facebook.com'> <img src="{% static 'images/absences_mp/facebook.png' %}" type='image/png' class="imgbas"> </a> 
+                  <a href='https://instagram.com'> <img src="{% static 'images/absences_mp/instagram.png' %}" type='image/png' class="imgbas"> </a> 
+                  <a href='https://twitter.com'> <img src="{% static 'images/absences_mp/twitter.png' %}" type='image/png' id="imgbas"> </a> 
+              </div>
+          </div>
+              <div class="fin" id="enbas">
+                <p id="copyright">&copy; 2023 DUB STEM MANAGEMNT SCHOOL</p>
+          </div>
+    </nav>
+</div>
+</body> 
+
+</html> 

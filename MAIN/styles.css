@@ -1,0 +1,43 @@
+body{
+    background-color:rgb(255, 236, 199) !important;
+}
+
+#userimg{
+    height: 10vh;
+    border-style: solid;
+}
+
+.titre {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 32px;
+    font-weight: bold;
+    color: #000000;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+  }
+  
+
+#menub{
+    font-size: 25px;
+    border-width: 3px;
+}
+
+#headermainp{
+   background-color: #A5D8FF !important;
+}
+
+#manageimg{
+    width: 40px;
+}
+
+.carousel {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+
+  }
+
+#casou{
+    margin: 5%;
+}
