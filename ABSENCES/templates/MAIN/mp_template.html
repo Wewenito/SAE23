@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+        {% load static %}
+
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="{% static 'BOOTSTRAP/js_BOOTSTRAP/bootstrap.min.js' %}"></script>
+        <link rel="stylesheet" type="text/css" href="{% static 'BOOTSTRAP/css_BOOTSTRAP/bootstrap.min.css' %}" > 
+        <link rel="stylesheet" type="text/css" href="{% static 'MAIN/stylesmp.css' %}">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+        <title>GESTION ABSENCES [HOME]</title>
+  </head>
+
+  <body>
+
+    <header class="navbar navbar-dark bg-dark" id='headermainp'>
+      {% block HEADER %}
+        {% if user.is_authenticated %}
+          {% for group in user.groups.all %}
+            {% if group.name == 'ETUDIANTS' %}
+              <div id="left_header_div">
+                <a href="{% url 'logout' %}"><button type="button" class="btn btn-danger">Se déconnecter</button></a>
+                <div id="dropdownlinks">
+                  <div class="dropdown">
+                    <a class="btn btn-info dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    MENU
+                    </a>
+                    <div class="dropdown-menu"  aria-labelledby="dropdownMenuLink">
+                      <a class="dropdown-item" href="#">Gérer mes absence</a>
+                      <a class="dropdown-item" href="#">Déclarer une absence</a>
+                      <hr>
+                      <a class="dropdown-item" href="#">Mon profil</a>
+                      <a class="dropdown-item" href="#">Modifier mon profil</a>
+                      <hr>
+                      <a class="dropdown-item" href="#">Mes cours</a>
+                      <a class="dropdown-item" href="#">Mes archives</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="title_header_div">
+                <span class='titre'> Dub STEM Management School </span>
+              </div>
+              <div id="right_header_div">
+                <a href='/profil'> <img src="{% static 'MAIN/IMAGES/etudiant.jpg' %}" type='image/png' class="rounded-circle" id='userimg'></a> 
+              </div>
+            {% elif group.name == 'ENSEIGNANTS' %}
+              <div id="left_header_div">
+                <a href="{% url 'logout' %}"><button type="button" class="btn btn-danger">Se déconnecter</button></a>
+                <div id="dropdownlinks">
+                  <div class="dropdown">
+                    <a class="btn btn-info dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    MENU
+                    </a>
+                    <div class="dropdown-menu"  aria-labelledby="dropdownMenuLink">
+                      <a class="dropdown-item" href="#">ACCEUIL ABSENCES</a>
+                      <hr>
+                      <a class="dropdown-item" href="#">Gestion Absences</a>
+                      <a class="dropdown-item" href="#">Gestion étudiants</a>
+                      <hr>
+                      <a class="dropdown-item" href="#">Gestion enseignants</a>
+                      <a class="dropdown-item" href="#">Gestion groupes</a>
+                      <hr>
+                      <a class="dropdown-item" href="#">Archives</a>
+                      <hr>
+                      <a class="dropdown-item" href="{% url 'ABSENCES:profile' user.id %}">Mon profil</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="title_header_div">
+                <span class='titre'> Dub STEM Management School </span>
+              </div>
+              <div id="right_header_div">
+                <a href="{% url 'ABSENCES:profile' user.id %}"> <img src="{% static 'MAIN/IMAGES/enseignant.png' %}" type='image/png' class="rounded-circle" id='userimg'> </a> 
+              </div>
+            {% elif group.name == 'ADMIN' %}
+              <div id="left_header_div">
+              
+              </div>
+              <div id="title_header_div">
+                <span class='titre'> Dub STEM Management School </span>
+              </div>
+              <div id="right_header_div">
+                <a href='/profil'> <img src="{% static 'MAIN/IMAGES/enseignant.png' %}" type='image/png' class="rounded-circle" id='userimg'> </a> 
+              </div>
+            {% endif %}
+          {% endfor %}
+        {% else %}
+          <div id="left_header_div">
+            <a href="{% url 'ABSENCES:signin' %}"><button type="button" class="btn btn-primary">Se connecter</button></a>
+          </div>
+          <div id="title_header_div">
+            <span class='titre'> Dub STEM Management School </span>
+          </div>
+          <div id="right_header_div">
+            <a href="{% url 'ABSENCES:home' %}"> <img src="{% static 'MAIN/IMAGES/user_default.png' %}" type='image/png' class="rounded-circle" id='userimg'> </a> 
+          </div>
+
+        {% endif %}
+      {% endblock %}
+
+    </header>
+    {% block content %}
+
+    {% endblock %}
+
+
+  </body> 
+
+</html> 

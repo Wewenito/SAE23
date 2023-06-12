@@ -1,0 +1,44 @@
+{% extends 'MAIN/mp_template.html' %}
+
+{% block content %}
+
+<div id="conteneur_ajout_groupe&cours">
+    <a href="{% url 'ABSENCES:ajout_groupe' %}"><button class="btn btn-success">Ajouter un groupe</button></a>
+    <a href="{% url 'ABSENCES:ajout_cour' %}"><button class="btn btn-success">Ajouter un Cours</button></a>
+</div>
+
+<div id="main_cadre">
+    <div id="conteneur_groupes" class="default_background_forms_etc">
+        {% for groupe in groupes %}
+            <div class="conteneur_groupe">
+                <h4>{{ groupe.nom }}</h4>
+                <a href=""><button class="btn btn-warning">SUPPRIMER</button></a>
+                <a href="#"><button class="btn btn-danger">EDITER</button></a>
+            </div>
+        {% endfor %}
+    </div>
+    <div id="conteneur_cours" class="default_background_forms_etc">
+        {% for cour in cours %}
+            <div class="conteneur_cour">
+                <div class="recap_cour">
+                    <h4>{{ cour.Titre_cours }}</h4>
+                </div>
+                <div class="crud_cour">
+                    <h4>{{ cour.Titre_cours }}</h4>
+                    <hr>
+                    <h3>{{ cour.enseignant }}</h3>
+                    <hr>
+                    <h3>
+                        {% for groupe in cour.Groupes.all %}
+                            {{ groupe.nom }}
+                        {% endfor %}
+                    </h3>
+                    <a href=""><button class="btn btn-warning">SUPPRIMER</button></a>
+                    <a href="#"><button class="btn btn-danger">EDITER</button></a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
