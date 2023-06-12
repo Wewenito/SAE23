@@ -1,0 +1,17 @@
+- <div id="historiqueabsences" class="cases">
+    
+    J'imagine ici une indication dès qu'une absence a été rendue, et 3 types de "notifications". 
+    Justificatif rendu, justificatif approuvé, justificatif non approuvé, en fonction de ce que note le prof.
+    Ca pourrait apparaître en rouge, vert et bleu, en fonction de l'action faite par l'étudiant ou l'enseignant 
+
+
+- <button id="fichierabsence"> FICHIER DE JUSTIFICATION AFFICHAGE</button> 
+
+    Dans la mesure du possible, on appuie dessus et ça affiche le contenu du fichier, soit sur une nouvelle page, soit ici directement (ce que je préfèrerais). 
+    sinon on laissera juste l'icone qui deviendra un boutton
+    
+- polices d'écriture
+
+
+- pour afficher ce qu'on veut dans un input il suffit d'écrire dedans value="id.prof" (exemple)
+
