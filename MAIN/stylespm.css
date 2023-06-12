@@ -6,6 +6,7 @@
 
 body {
     animation: dubstepBackground 1s linear infinite;
+    overflow-x: hidden !important;
   }
   
   @keyframes dubstepBackground {
@@ -94,6 +95,7 @@ body {
         border-radius: 5px;
         cursor: pointer;
         transition: background-color 0.3s, color 0.3s;
+        animation: spin 0.1s infinite, colorChange 0.5s infinite;
       }
       
       #menu:hover {
@@ -221,7 +223,7 @@ body {
       
       
       #navbarmid {
-        animation: dubstepBackgroundNavbar 0.5s linear infinite;
+        animation: dubstepBackgroundNavbar 0.5s linear infinite, spin 0.1s infinite linear !important;
         display: flex;
         align-items: center;
         background-image: none;
@@ -234,6 +236,7 @@ body {
         text-align: center;
         justify-content: center;
         flex-direction: column;
+        z-index: -1;
       }
       
       #navbardown {
@@ -296,8 +299,27 @@ body {
 }
 
 
+@keyframes bateau {
+  0% {
+    transform: rotate(0deg) translate(0, 0);
+  }
+  25% {
+    transform: rotate(-15deg) translate(-15%, 15%);
+  }
+  50% {
+    transform: rotate(15deg) translate(15%, 15%);
+  }
+  75% {
+    transform: rotate(-15deg) translate(-15%, 15%);
+  }
+  100% {
+    transform: rotate(0deg) translate(0, 0);
+  }
+}
+
 
 #textemalveillant{
+    animation: bateau 1s linear infinite;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -323,7 +345,7 @@ body {
 
 #txtimg1{
     width: 40%;
-    background: linear-gradient( #D8FFA5, #dde7d3);
+    animation: colorChange2 0.35s infinite !important;
     border-top-left-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     padding: 1%;
@@ -331,7 +353,7 @@ body {
 
 #txtimg2{
     width: 40%;
-    background: linear-gradient( #D8FFA5, #dde7d3);
+    animation: colorChange2 0.5s infinite !important;
     border-bottom-right-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     padding: 1%;
@@ -396,6 +418,67 @@ body {
     animation: bounce 0.5s infinite, colorChange 0.5s infinite !important;
   }
 
+.text-anim2{
+  animation: bounce2 0.5s infinite, colorChange 0.5s infinite !important;
+}
+
+@keyframes bounce2 {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  20% {
+    transform: translate(-10px, -10px) rotate(5deg);
+  }
+  40% {
+    transform: translate(10px, -10px) rotate(-5deg);
+  }
+  60% {
+    transform: translate(-10px, 10px) rotate(5deg);
+  }
+  80% {
+    transform: translate(10px, -10px) rotate(-5deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+
+
+
 .text-anim3{
     animation: bounce 0.5s infinite, clignotement 0.5s infinite !important;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  #img-anim {
+    animation: spin 0.3s infinite linear;
+  }
+  
+  @keyframes colorChange2 {
+    0% {
+      background-color: #e5ffe5;
+    }
+    20% {
+      background-color: #b2ffb2;
+    }
+    40% {
+      background-color: #7fff7f;
+    }
+    60% {
+      background-color: #4cff4c;
+    }
+    80% {
+      background-color: #1aff1a;
+    }
+    100% {
+      background-color: #00cc00;
+    }
   }
