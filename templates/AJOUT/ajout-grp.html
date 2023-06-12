@@ -57,29 +57,8 @@
         <form method="POST">
             {% csrf_token %}
             <div class="form-group">
-              <label for="id_nom">Nom du cours:</label>
+              <label for="id_nom">Nom du groupe :</label>
               <input type="text" class="form-control" id="id_nom" name="nom" required>
-            </div>
-            <div class="form-group">
-              <label for="id_date">Date :</label>
-              <input type="text" class="form-control" id="id_date" name="date" required>
-            </div>
-            <div class="form-group">
-              <label for="id_ens">Ens : (Clef)</label>
-              <input type="email" class="form-control" id="id_ens" name="ens" required>
-            </div>
-            <div class="form-group">
-                <label for="id_groupe">Groupe :</label>
-                <input type="text" class="form-control" id="id_groupe" name="groupe" required>
-            </div>
-            <div class="form-group">
-                <label for="id_durée">Durée :</label>
-                <input type="text" class="form-control" id="id_durée" name="durée" required>
-            </div>
-              <div id="submitbutton">
-                <br>
-                <button type="submit" class="btn btn-primary">Mettre à jour</button>
-              </div>
             </div>
         </form>
     
