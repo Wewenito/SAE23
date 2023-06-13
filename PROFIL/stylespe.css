@@ -236,3 +236,8 @@ h3{
     border-color: black;
     background-image: linear-gradient(to bottom, rgb(244, 252, 176),#ffffff);
 }
+
+.imgfin{
+    height: 10vh;
+}
+  

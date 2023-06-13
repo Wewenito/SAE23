@@ -306,3 +306,8 @@ h3{
     display: flex;
     justify-content: right;
   }
+
+
+  input{
+    background-color: #52ee2b;
+  }

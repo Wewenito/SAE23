@@ -1,6 +1,8 @@
   
 .tout{
     padding: 10%;
+    display: flex;
+    justify-content: center;
 }
 
 body {
@@ -254,3 +256,10 @@ h3{
     cursor: not-allowed !important;
 }
 
+.non_modif{
+    cursor: not-allowed !important;
+}
+
+.non_modif:hover {
+    cursor: not-allowed !important;
+}

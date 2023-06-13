@@ -306,3 +306,12 @@ h3{
   #submitbutton{
     text-align: center;
 }
+
+
+.non_modif{
+  cursor: not-allowed !important;
+}
+
+.non_modif:hover {
+  cursor: not-allowed !important;
+}
