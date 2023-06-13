@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html lang="fr">
+<h1>Télécharger un fichier CSV</h1>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Télécharger</button>
+    <input type="file" name="csv_file" id="csvFile" accept=".csv">
+</form>

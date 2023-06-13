@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="fr">
+<h1>Contenu du fichier CSV</h1>
+<table>
+    {% for row in data %}
+        <tr>
+            {% for value in row %}
+                <td>{{ value }}</td>
+            {% endfor %}
+        </tr>
+    {% endfor %}
+</table>
