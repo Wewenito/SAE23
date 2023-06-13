@@ -9,7 +9,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="{% static 'BOOTSTRAP/js_BOOTSTRAP/bootstrap.min.js' %}"></script>
         <link rel="stylesheet" type="text/css" href="{% static 'BOOTSTRAP/css_BOOTSTRAP/bootstrap.min.css' %}" > 
-        <link rel="stylesheet" type="text/css" href="{% static 'AJOUT/stylesajgrp.css'%}">
+        <link rel="stylesheet" type="text/css" href="{% static 'PROFIL/stylescens.css'%}">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -38,9 +38,9 @@
                 </a>
 
                 <div class="dropdown-menu"  aria-labelledby="dropdownMenuLink">
-                    <a class="dropdown-item" href="/profil-ens/ajout-etu">Un étudiant</a>
-                    <a class="dropdown-item" href="/profil-ens/ajout-grp">Un groupe</a>
-                    <a class="dropdown-item" href="/profil-ens/ajout-crs">Un cours</a>
+                  <a class="dropdown-item" href="/profil-ens/ajout-etu">Un étudiant</a>
+                  <a class="dropdown-item" href="/profil-ens/ajout-grp">Un groupe</a>
+                  <a class="dropdown-item" href="/profil-ens/ajout-crs">Un cours</a>
                 </div>
             </div>
         </div>
@@ -53,39 +53,28 @@
     </header>
 
     
-    <div class='tout'>
-        <form method="POST">
-            {% csrf_token %}
-            <div class="form-group">
-              <label for="id_nom">Nom du groupe :</label>
-              <input type="text" class="form-control" id="id_nom" name="nom" required>
-            </div>
-        </form>
-    
-    
-        <div class="row" id="liste">
-            <div class="col-4" id="choixliste">
-              <div class="list-group" id="list-tab" role="tablist">
-                <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Groupes</a>
-                <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Etudiants</a>
-                <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Cours</a>
-                <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Enseignants</a>
-              </div>
-            </div>
-            <div class="col-8" id="infoliste">
-              <div class="tab-content" id="nav-tabContent">
-                <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list"> <p> 1.1 </p> </div>
-                <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list"> <p> 2.2 </p> </div>
-                <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">liste cours existants</div>
-                <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">liste cours existants</div>
-              </div>
-            </div>
+<div class='tout'>
+    <form method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="id_nom">Nom :</label>
+          <input type="text" class="form-control" id="id_nom" name="nom" required>
+        </div>
+        <div class="form-group">
+          <label for="id_prenom">Prénom :</label>
+          <input type="text" class="form-control" id="id_prenom" name="prenom" required>
+        </div>
+        <div class="form-group">
+          <label for="id_email">Email :</label>
+          <input type="email" class="form-control" id="id_email" name="email" required>
+        </div>
+          <div id="submitbutton">
+            <br>
+            <button type="submit" class="btn btn-primary">Mettre à jour</button>
           </div>
         </div>
-          
-    </div>
-
-
+    </form>      
+</div>
 
 
 <div>
