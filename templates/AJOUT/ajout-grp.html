@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    {% load static %}
+        
+
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="{% static 'BOOTSTRAP/js_BOOTSTRAP/bootstrap.min.js' %}"></script>
+        <link rel="stylesheet" type="text/css" href="{% static 'BOOTSTRAP/css_BOOTSTRAP/bootstrap.min.css' %}" > 
+        <link rel="stylesheet" type="text/css" href="{% static 'AJOUT/stylesajgrp.css'%}">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+        <title>GESTION ABSENCES [PROFIL ENS]</title>
+</head>
+
+<body>
+
+    <header class="navbar navbar-dark bg-dark" id='headermainp'>
+    <div id="headerleft">
+        <div class="bouttonsmain">
+            <a href='/mainpage' class="new-item active"> <button type="button" id='menu'> Log Out</button> </a>
+        </div>
+
+        <span class='titre'> Dub STEM Management School </span>
+    </div>
+
+    <div id="headerright">
+        <div id="dropdownlinks">
+            <div class="dropdown">
+                <a class="btn btn-info dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Ajouter...
+                </a>
+
+                <div class="dropdown-menu"  aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item" href="/profil-ens/ajout-etu">Un étudiant</a>
+                    <a class="dropdown-item" href="/profil-ens/ajout-grp">Un groupe</a>
+                    <a class="dropdown-item" href="/profil-ens/ajout-crs">Un cours</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="limagela">
+            <a href='/profil-ens' class="userimge"> <img src="{% static 'images/absences_p/enseignant.png' %}" type='image/png' class="rounded-circle" id='userimg'> </a> 
+        <div>
+    </div>
+
+    </header>
+
+    
+    <div class='tout'>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+              <label for="id_nom">Nom du groupe :</label>
+              <input type="text" class="form-control" id="id_nom" name="nom" required>
+            </div>
+        </form>
+    
+    
+        <div class="row" id="liste">
+            <div class="col-4" id="choixliste">
+              <div class="list-group" id="list-tab" role="tablist">
+                <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Groupes</a>
+                <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Etudiants</a>
+                <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Cours</a>
+                <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Enseignants</a>
+              </div>
+            </div>
+            <div class="col-8" id="infoliste">
+              <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list"> <p> 1.1 </p> </div>
+                <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list"> <p> 2.2 </p> </div>
+                <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">liste cours existants</div>
+                <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">liste cours existants</div>
+              </div>
+            </div>
+          </div>
+        </div>
+          
+    </div>
+
+
+
+
+<div>
+    <nav class="navbar navbar-dark bg-primary" id="navbardown">
+          <div class="basenbas">
+              <div class="fin">
+                <h4>Contact</h4>
+                <p>Adresse : 123 BassDropAvenue - Roubaix France</p>
+                <p>Téléphone : +33 03 68 91 45 18</p>
+                <p>Email : dubstem@mail.com</p>
+              </div>
+              <div class="fin">
+                <h4>Réseaux sociaux</h4>
+                  <a href='https://facebook.com'> <img src="{% static 'images/absences_mp/facebook.png' %}" type='image/png' class="imgbas"> </a> 
+                  <a href='https://instagram.com'> <img src="{% static 'images/absences_mp/instagram.png' %}" type='image/png' class="imgbas"> </a> 
+                  <a href='https://twitter.com'> <img src="{% static 'images/absences_mp/twitter.png' %}" type='image/png' id="imgbas"> </a> 
+              </div>
+          </div>
+              <div class="fin" id="enbas">
+                <p id="copyright">&copy; 2023 DUB STEM MANAGEMNT SCHOOL</p>
+          </div>
+    </nav>
+</div>
+</body> 
+
+</html> 
