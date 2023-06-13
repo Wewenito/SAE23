@@ -110,19 +110,19 @@ body {
 
       @keyframes clignotement {
         0% {
-          background-color: #003399;
+          background-color: #ffffff;
         }
         20% {
-          background-color: #0055A4;
+          background-color: #30bbf1;
         }
         40% {
-          background-color: #0070AF;
+          background-color: #009BC5;
         }
         60% {
-          background-color: #0086BA;
+          background-color: #0a7fc4;
         }
         80% {
-          background-color: #009BC5;
+          background-color: #0070AF;
         }
         100% {
           background-color: #003399;
@@ -149,6 +149,7 @@ body {
 
     #casou{
         margin: 5%;
+        animation: bounce3 0.5s linear infinite;
     }
 
 
@@ -437,6 +438,27 @@ body {
   }
   80% {
     transform: translate(10px, -10px) rotate(-5deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+
+@keyframes bounce3 {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  20% {
+    transform: translate(-40px, -40px) rotate(5deg);
+  }
+  40% {
+    transform: translate(40px, -40px) rotate(-5deg);
+  }
+  60% {
+    transform: translate(-40px, 40px) rotate(5deg);
+  }
+  80% {
+    transform: translate(40px, -40px) rotate(-5deg);
   }
   100% {
     transform: translate(0, 0) rotate(0deg);
