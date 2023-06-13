@@ -9,71 +9,76 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="{% static 'BOOTSTRAP/js_BOOTSTRAP/bootstrap.min.js' %}"></script>
         <link rel="stylesheet" type="text/css" href="{% static 'BOOTSTRAP/css_BOOTSTRAP/bootstrap.min.css' %}" > 
-        <link rel="stylesheet" type="text/css" href="{% static 'PROFIL/stylescens.css'%}">
+        <link rel="stylesheet" type="text/css" href="{% static 'PROFIL/stylespe.css'%}">
+        
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
-        <title>GESTION ABSENCES [PROFIL ENS]</title>
+        <link rel="icon" type="image/png" href="">
+
+        <title>GESTION ABSENCES [PROFIL ETU]</title>
 </head>
 
 <body>
 
     <header class="navbar navbar-dark bg-dark" id='headermainp'>
-    <div id="headerleft">
         <div class="bouttonsmain">
             <a href='/mainpage' class="new-item active"> <button type="button" id='menu'> Log Out</button> </a>
         </div>
 
         <span class='titre'> Dub STEM Management School </span>
-    </div>
 
-    <div id="headerright">
-        <div id="dropdownlinks">
-            <div class="dropdown">
-                <a class="btn btn-info dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Ajouter...
-                </a>
-
-                <div class="dropdown-menu"  aria-labelledby="dropdownMenuLink">
-                  <a class="dropdown-item" href="/profil-ens/ajout-etu">Un étudiant</a>
-                  <a class="dropdown-item" href="/profil-ens/ajout-grp">Un groupe</a>
-                  <a class="dropdown-item" href="/profil-ens/ajout-crs">Un cours</a>
-                </div>
-            </div>
-        </div>
-
-        <div id="limagela">
-            <a href='/profil-ens' class="userimge"> <img src="{% static 'images/absences_p/enseignant.png' %}" type='image/png' class="rounded-circle" id='userimg'> </a> 
-        <div>
-    </div>
+        <a href='/profil-etu/custom' class="userimge"> <img src="{% static 'images/absences_p/etudiant.jpg' %}" type='image/jpeg' class="rounded-circle" id='userimg'> </a> 
 
     </header>
 
     
 <div class='tout'>
-    <form method="POST">
-        {% csrf_token %}
-        <div class="form-group">
-          <label for="id_nom">Nom :</label>
-          <input type="text" class="form-control non_modif" id="id_nom" name="nom" readonly>
-        </div>
-        <div class="form-group">
-          <label for="id_prenom">Prénom :</label>
-          <input type="text" class="form-control non_modif" id="id_prenom" name="prenom" readonly>
-        </div>
-        <div class="form-group">
-          <label for="id_email">Email :</label>
-          <input type="email" class="form-control" id="id_email" name="email" required>
-        </div>
-          <div id="submitbutton">
-            <br>
-            <button type="submit" class="btn btn-primary">Mettre à jour</button>
-          </div>
-        </div>
-    </form>      
+    <div id="main_cadre">
+        <section id="navigator_side">
+            <div class="d-flex flex-column flex-shrink-0 p-3 bg-light">
+                <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                  <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+                  <span class="fs-4" style="color: black;">GERER</span>
+                </a>
+                <hr>
+                <ul class="nav nav-pills flex-column mb-auto">
+                  <li class="liste_nav">
+                    <a href="#" class="nav-link" style="color: black;" aria-current="page">
+                      <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
+                      COURS
+                    </a>
+                  </li>
+                  <li class="liste_nav"> 
+                    <a href="#" class="nav-link" style="color: black;">
+                      <svg class="bi me-2" width="16"  height="16"><use xlink:href="#speedometer2"></use></svg>
+                      GROUPES
+                    </a>
+                  </li>
+                  <li class="liste_nav">
+                    <a href="#" class="nav-link" style="color: black;">
+                      <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
+                      ETUDIANTS
+                    </a>
+                  </li>
+                  <li class="liste_nav">
+                    <a href="#" class="nav-link" style="color: black;">
+                      <svg class="bi me-2" width="16" height="16"><use xlink:href="#grid"></use></svg>
+                      ENSEIGNANTS
+                    </a>
+                  </li>
+                </ul>
+              </div>
+        </section>
+        <section id="BLOCK_SIDE">
+    
+        </section>
+    </div>
+    
+
 </div>
 
 
