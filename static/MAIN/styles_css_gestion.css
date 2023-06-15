@@ -1,0 +1,43 @@
+#main_cadre{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+#BLOCK_SIDE{
+    width: 80%;
+    margin: 0px 0px 0px 0px;
+}
+
+#span_liste:hover{
+    background-color: green;
+}
+
+.liste_nav:hover{
+    background-color: blue;
+    border-radius: 10px;
+}
+
+#navigator_side{
+    min-height: 100vh;
+    width: 20%;
+    margin: 0px 0px 0px 0px;
+}
+
+#navigator_side > div{
+    min-height: 100vh;
+    width: 100%;
+}
+
+.CONTENEUR_INFO_DETAIL {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#liste{
+    width: 100% !important;
+}

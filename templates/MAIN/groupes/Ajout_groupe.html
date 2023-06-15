@@ -1,0 +1,14 @@
+{% extends 'MAIN/enseignants/gestion_ens.html' %}
+{% load static %}
+
+{% block SIDE_GESTION %}
+
+<h2 id="">AJouter un groupe</h2>
+<form method="POST">
+    {% csrf_token %}
+    <p>Nom du groupe :</p>
+    {{ form.nom }}
+    <button type="submit">AJouter</button>
+</form>
+
+{% endblock %}
