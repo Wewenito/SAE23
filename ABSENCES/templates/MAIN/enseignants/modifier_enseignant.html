@@ -1,0 +1,13 @@
+{% extends 'MAIN/enseignants/gestion_ens.html' %}
+
+{% load static %}
+{% block SIDE_GESTION %}
+
+<form  action="{{ modifier_enseignant_url }}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}  <!-- Render form fields -->
+    <button type="submit" value="Submit" class="btn btn-warning">Mettre à Jour</button>
+</form>
+
+
+{% endblock %}

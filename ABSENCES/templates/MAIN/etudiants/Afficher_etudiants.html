@@ -1,0 +1,103 @@
+{% extends 'MAIN/enseignants/gestion_ens.html' %}
+
+{% load static %}
+
+{% block SIDE_GESTION %}
+
+<a href="{% url 'ABSENCES:Ajouter_etudiants' %}"><button class="btn btn-primary">Ajouter un étudiant</button></a>
+
+<div class="row" id="liste">
+    <div class="col-4" id="choixliste">
+      <div class="list-group" id="list-tab" role="tablist">
+        {% for etudiant in etudiant %}
+        <a class="list-group-item list-group-item-action DISPLAYED_INFO" id="{{ etudiant.id }}" data-toggle="list" href="" role="tab" aria-controls="home">{{ etudiant.nom }}</a>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="col-8 " id="infoliste">
+      <div class="tab-content" id="nav-tabContent">
+        {% for etudiant in etudiant %}
+        <div class="tab-pane fade show CONTENEUR_INFO_DETAIL" id="follow_up_{{ etudiant.id }}" role="tabpanel" aria-labelledby="list-home-list">
+            <div>
+                <h5>Nom :</h5>
+                <p>{{ etudiant.nom }}</p>
+            </div>
+            <div>
+                <h5>Prénom :</h5>
+                <p>{{ etudiant.prenom }}</p>
+            </div>
+            <div>
+                <h5>Mail :</h5>
+                <p>{{ etudiant.mail }}</p>
+            </div>
+            <div>
+                <h5>Groupe :</h5>
+                <p>{{ etudiant.groupe.nom }}</p>
+            </div>
+            <div>
+                <h5>Photo :</h5>
+                <p>{{ etudiant.photo }}</p>
+            </div>
+            <div>
+                <h5>description :</h5>
+                <p>{{ etudiant.description }}</p>
+            </div>
+            <div>
+                <h5>Adresse :</h5>
+                <p>{{ etudiant.adresse }}</p>
+            </div>
+            <div>
+                <h5>Téléphone :</h5>
+                <p>{{ etudiant.telephone }}</p>
+            </div>
+            <div>
+                <h5>Boursier :</h5>
+                <p>{{ etudiant.boursier }}</p>
+            </div>
+            <form action="{% url 'ABSENCES:afficher_modif_form' etudiant.id %}" method="post">
+              {% csrf_token %}
+              <button type="submit" class="btn btn-warning">EDITER</button>
+            </form>
+            <form action="{% url 'ABSENCES:supprimer_etudiant' etudiant.id %}" method="post">
+              {% csrf_token %}
+              <button type="submit" class="btn btn-danger">SUPPRIMER</button>
+            </form>
+          
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+const divs = document.querySelectorAll('.DISPLAYED_INFO');
+const tabPanes = document.querySelectorAll('.tab-pane');
+
+function removeAllActiveClasses() {
+  divs.forEach(div => {
+    div.classList.remove('active');
+
+
+  });
+
+  tabPanes.forEach(pane => {
+    pane.style.display = "none";
+    pane.classList.remove('active');
+
+  });
+}
+
+divs.forEach(div => {
+  div.addEventListener('click', function() {
+    const divId = this.id;
+    console.log(this.id);
+
+    removeAllActiveClasses();
+
+    document.getElementById('follow_up_' + divId).style.display = "flex";
+    document.getElementById('follow_up_' + divId).classList.add('active');
+  });
+});
+
+</script>
+{% endblock %}

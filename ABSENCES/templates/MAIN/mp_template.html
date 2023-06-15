@@ -13,6 +13,9 @@
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
+        {% block HEAD %}
+        {% endblock %}
+
         <title>GESTION ABSENCES [HOME]</title>
   </head>
 
@@ -24,60 +27,55 @@
           {% for group in user.groups.all %}
             {% if group.name == 'ETUDIANTS' %}
               <div id="left_header_div">
-                <a href="{% url 'logout' %}"><button type="button" class="btn btn-danger">Se déconnecter</button></a>
-                <div id="dropdownlinks">
+                <a href="{% url 'logout' %}"><button type="button" id="MENU_BUTTON">Se déconnecter</button></a>
+                <div id="dropdownlinks" class="LOGOUT_BUTTON">
+                  <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    MENU</a>
                   <div class="dropdown">
-                    <a class="btn btn-info dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    MENU
-                    </a>
+
+                    
                     <div class="dropdown-menu"  aria-labelledby="dropdownMenuLink">
-                      <a class="dropdown-item" href="#">Gérer mes absence</a>
-                      <a class="dropdown-item" href="#">Déclarer une absence</a>
+                      <a class="dropdown-item" href="{% url 'ABSENCES:acceuil_etu' user.id %}">ACCEUIL</a>
                       <hr>
-                      <a class="dropdown-item" href="#">Mon profil</a>
-                      <a class="dropdown-item" href="#">Modifier mon profil</a>
-                      <hr>
-                      <a class="dropdown-item" href="#">Mes cours</a>
-                      <a class="dropdown-item" href="#">Mes archives</a>
+                      <a class="dropdown-item" href="{% url 'ABSENCES:gestion_etudiants' arg1='GESTION' %}">GESTION</a>
+                      <a class="dropdown-item" href="{% url 'ABSENCES:gestion_etudiants' arg1='PROFIL' %}">PROFIL</a>
                     </div>
+                    
                   </div>
+                
                 </div>
               </div>
               <div id="title_header_div">
                 <span class='titre'> Dub STEM Management School </span>
               </div>
               <div id="right_header_div">
-                <a href='/profil'> <img src="{% static 'MAIN/IMAGES/etudiant.jpg' %}" type='image/png' class="rounded-circle" id='userimg'></a> 
+                <a href='#'> <img src="{% static 'MAIN/IMAGES/etudiant.jpg' %}" type='image/png' class="rounded-circle" id='userimg'></a> 
               </div>
             {% elif group.name == 'ENSEIGNANTS' %}
               <div id="left_header_div">
-                <a href="{% url 'logout' %}"><button type="button" class="btn btn-danger">Se déconnecter</button></a>
-                <div id="dropdownlinks">
+                <a href="{% url 'logout' %}"><button type="button" id="MENU_BUTTON">Se déconnecter</button></a>
+                <div id="dropdownlinks" class="LOGOUT_BUTTON">
+                  <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    MENU</a>
                   <div class="dropdown">
-                    <a class="btn btn-info dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    MENU
-                    </a>
+
+                    
                     <div class="dropdown-menu"  aria-labelledby="dropdownMenuLink">
-                      <a class="dropdown-item" href="#">ACCEUIL ABSENCES</a>
+                      <a class="dropdown-item" href="{% url 'ABSENCES:Gestion_enseignants' arg1='ACCEUIL' %}">ACCEUIL</a>
                       <hr>
-                      <a class="dropdown-item" href="#">Gestion Absences</a>
-                      <a class="dropdown-item" href="#">Gestion étudiants</a>
+                      <a class="dropdown-item" href="{% url 'ABSENCES:Gestion_enseignants' arg1='GESTION' %}">GESTION</a>
                       <hr>
-                      <a class="dropdown-item" href="#">Gestion enseignants</a>
-                      <a class="dropdown-item" href="#">Gestion groupes</a>
-                      <hr>
-                      <a class="dropdown-item" href="#">Archives</a>
-                      <hr>
-                      <a class="dropdown-item" href="{% url 'ABSENCES:profile' user.id %}">Mon profil</a>
+                      <a class="dropdown-item" href="{% url 'ABSENCES:Gestion_enseignants' arg1='PROFIL' %}">PROFIL</a>
                     </div>
                   </div>
+                
                 </div>
               </div>
               <div id="title_header_div">
                 <span class='titre'> Dub STEM Management School </span>
               </div>
               <div id="right_header_div">
-                <a href="{% url 'ABSENCES:profile' user.id %}"> <img src="{% static 'MAIN/IMAGES/enseignant.png' %}" type='image/png' class="rounded-circle" id='userimg'> </a> 
+                <a href="#"> <img src="{% static 'MAIN/IMAGES/enseignant.png' %}" type='image/png' class="rounded-circle" id='userimg'> </a> 
               </div>
             {% elif group.name == 'ADMIN' %}
               <div id="left_header_div">
@@ -87,7 +85,7 @@
                 <span class='titre'> Dub STEM Management School </span>
               </div>
               <div id="right_header_div">
-                <a href='/profil'> <img src="{% static 'MAIN/IMAGES/enseignant.png' %}" type='image/png' class="rounded-circle" id='userimg'> </a> 
+                <a href='#'> <img src="{% static 'MAIN/IMAGES/enseignant.png' %}" type='image/png' class="rounded-circle" id='userimg'> </a> 
               </div>
             {% endif %}
           {% endfor %}
@@ -104,11 +102,33 @@
 
         {% endif %}
       {% endblock %}
-
     </header>
+
     {% block content %}
 
     {% endblock %}
+
+    <div>
+      <nav class="navbar navbar-dark bg-primary" id="navbardown">
+            <div class="basenbas">
+                <div class="fin">
+                  <h4>Contact</h4>
+                  <p>Adresse : 123 BassDropAvenue - Roubaix France</p>
+                  <p>Téléphone : +33 03 68 91 45 18</p>
+                  <p>Email : dubstem@mail.com</p>
+                </div>
+                <div class="fin">
+                  <h4>Réseaux sociaux</h4>
+                    <a href='https://facebook.com'> <img src="{% static 'MAIN/IMAGES/facebook.png' %}" type='image/png' class="imgbas"> </a> 
+                    <a href='https://instagram.com'> <img src="{% static 'MAIN/IMAGES/instagram.png' %}" type='image/png' class="imgbas"> </a> 
+                    <a href='https://twitter.com'> <img src="{% static 'MAIN/IMAGES/twitter.png' %}" type='image/png' id="imgbas"> </a> 
+                </div>
+            </div>
+                <div class="fin" id="enbas">
+                  <p id="copyright">&copy; 2023 DUB STEM MANAGEMNT SCHOOL</p>
+            </div>
+      </nav>
+  </div>
 
 
   </body> 

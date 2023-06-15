@@ -1,0 +1,15 @@
+{% extends 'MAIN/mp_template.html' %}
+
+{% block content %} 
+    <div id="affichage_profil_ens">
+        <h2>{{ enseignant.nom }} - {{ enseignant.prenom }}</h2>
+
+        <h3>{{ enseignant.mail }}</h3>
+
+        <form method="post" action="{% url 'ABSENCES:update_mail_ens' enseignant.id %}">
+            {% csrf_token %}
+            <input type="email" name="new_email" placeholder="Nouvelle adresse mail" required>
+            <button type="submit" class="btn btn-warning">Modifier mon adresse mail</button>
+        </form>
+    </div>
+{% endblock %}

@@ -4,183 +4,206 @@ body {
     background-size: 60px 60px;
     backdrop-filter: blur(10px);
     min-height: 100vh;
-  }
-  
-  
+}
   
 
-    #userimg{
-        height: 10vh;
-        border-style: solid;
+#MENU_BUTTON{
+    background-color: #e73434;
+    color: #ffffff;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+
+#MENU_BUTTON:hover {
+    background-color: #ffffff;
+    color: #e73434;
+}
+
+#MENU_BUTTON:active {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.LOGOUT_BUTTON{
+    background-color: #1a6ae2;
+    color: #ffffff !important;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#dropdownMenuLink{
+    color: #ffffff;
+}
+
+#dropdownMenuLink:hover{
+    color: #1a6ae2;
+    text-decoration: none;
+}
+
+.LOGOUT_BUTTON:hover {
+    background-color: #ffffff;
+    color: #1a6ae2;
+}
+
+.LOGOUT_BUTTONa:active {
+    background-color: #000000;
+    color: #1a6ae2;
+}
+  
+
+#userimg{
+    height: 10vh;
+    border-style: solid;
+}
+
+.titre {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 32px;
+    font-weight: bold;
+    color: #000000;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+
+
+#headermainp{
+    background-color: #A5D8FF !important;
+    background-image: linear-gradient(to bottom, #A5D8FF, #F9F9F9);
+    background-blend-mode: overlay;
+    filter:drop-shadow(110%);
+}
+
+#manageimg{
+    width: 40px;
+}
+
+.carousel {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#casou{
+    margin: 5%;
+}
+
+
+h5 {
+    font-size: 25px !important;
+    color: black;
+}
+
+p {
+    font-size: 20px !important;
+    color: black;
+}
+
+.textcarou{
+    background-color: rgba(255, 255, 255, 0.452);
+    border-radius: 10px;
+}
+
+#ol_3traits_carou{
+    background-color: transparent !important;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #A5D8FF;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+#navbarmid{
+    display: flex;
+    align-items: center;
+    background-color: #FFA5D8 !important;
+    background-image: linear-gradient(to bottom, #FFA5D8,#fad6ea);
+    background-blend-mode: overlay;
+    filter:drop-shadow(110%);
+    height: 20vh;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    border: 2px solid #f7b8b8;
+    margin-top: 10%;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
     }
 
-    .titre {
-        font-family: 'Helvetica', sans-serif;
-        font-size: 32px;
-        font-weight: bold;
-        color: #000000;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        text-align: center;
-    }
+
+#navbardown{
+    display: flex;
+    align-items: center;
+    background-color: #FFA5D8 !important;
+    background-image: linear-gradient(to bottom, #FFA5D8,#fad6ea);
+    background-blend-mode: overlay;
+    filter:drop-shadow(110%);
+    height: 30vh;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    margin-top: 10%;
+    border-radius: 5px;
+    border: 2px solid #f7b8b8;
+}
+      
+#navbardown .contact {
+font-size: 20px;
+font-weight: bold;
+color: #ffffff;
+margin: 0 20px;
+}
     
-
-    #menu {
-        background-color: #1a6ae2;
-        color: #ffffff;
-        padding: 15px 30px;
-        font-size: 18px;
-        font-weight: bold;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background-color 0.3s, color 0.3s;
-      }
-      
-      #menu:hover {
-        background-color: #ffffff;
-        color: #1a6ae2;
-      }
-      
-      #menu:active {
-        background-color: #000000;
-        color: #ffffff;
-      }
-
-    #headermainp{
-        background-color: #A5D8FF !important;
-        background-image: linear-gradient(to bottom, #A5D8FF, #F9F9F9);
-        background-blend-mode: overlay;
-        filter:drop-shadow(110%);
-    }
-
-    #manageimg{
-        width: 40px;
-    }
-
-    .carousel {
-        width: 100%;
-        max-width: 600px;
-        margin: 0 auto;
-
-    }
-
-    #casou{
-        margin: 5%;
-    }
-
-
-    h5 {
-        font-size: 25px !important;
-        color: black;
-    }
-    
-    p {
-        font-size: 20px !important;
-        color: black;
-    }
-
-    .textcarou{
-
-        background-color: rgba(255, 255, 255, 0.452);
-        border-radius: 10px;
-    }
-
-    #ol_3traits_carou{
-        background-color: transparent !important;
-    }
-
-    #menu{
-        font-size: 25px;
-    }
-
-    header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        background-color: #A5D8FF;
-        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
-    }
-
-
-    #navbarmid{
-        display: flex;
-        align-items: center;
-        background-color: #FFA5D8 !important;
-        background-image: linear-gradient(to bottom, #FFA5D8,#fad6ea);
-        background-blend-mode: overlay;
-        filter:drop-shadow(110%);
-        height: 20vh;
-        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
-        border-radius: 10px;
-        border: 2px solid #f7b8b8;
-        margin-top: 10%;
-        text-align: center;
-        justify-content: center;
-        flex-direction: column;
-      }
-
-
-    #navbardown{
-        display: flex;
-        align-items: center;
-        background-color: #FFA5D8 !important;
-        background-image: linear-gradient(to bottom, #FFA5D8,#fad6ea);
-        background-blend-mode: overlay;
-        filter:drop-shadow(110%);
-        height: 30vh;
-        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
-        margin-top: 10%;
-        border-radius: 5px;
-        border: 2px solid #f7b8b8;
-      }
-      
-      #navbardown .contact {
-        font-size: 20px;
-        font-weight: bold;
-        color: #ffffff;
-        margin: 0 20px;
-      }
-      
-      #navbardown .copyright {
-        font-size: 14px;
-        color: #ffffff;
-        margin-top: 10px;
-      }
+#navbardown .copyright {
+font-size: 14px;
+color: #ffffff;
+margin-top: 10px;
+}
 
 ::-webkit-scrollbar {
     width: 10px;
     background-color: #F1F1F1;
-  }
+}
   
-  ::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
     background-color: #888;
     border-radius: 5px;
-  }
+}
   
-  ::-webkit-scrollbar-thumb:hover {
+::-webkit-scrollbar-thumb:hover {
     background-color: #555;
-  }
+}
   
-  ::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {
     background-color: #F1F1F1;
-  }
+}
   
-  ::-webkit-scrollbar-corner {
+::-webkit-scrollbar-corner {
     background-color: #F1F1F1;
-  }
+}
 
 
 .flechesimg{
     display: inline;
-
 }
 
 .carousseltxt{
     text-align: center;
 }
-
-
 
 #textemalveillant{
     display: flex;
@@ -189,7 +212,6 @@ body {
     width: 100%;
     margin-top: 5%;
 }
-
 
 .textemalvaillant1{
     display: flex;
@@ -200,7 +222,6 @@ body {
     display: flex;
     justify-content: center;
 }
-
 
 .caseimg{
     width: 40%;
@@ -221,8 +242,6 @@ body {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     padding: 1%;
 }
-  
-
 
 #img1{
     width: 100%;
@@ -237,7 +256,6 @@ body {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     filter: brightness(110%);
 }
-
 
 #decouverte{
     font-size: 30px;
@@ -257,7 +275,7 @@ body {
     text-align: center;
     width: 100%;
 }
-    
+
 .basenbas {
     display: flex;
     width: 100%;
@@ -276,7 +294,6 @@ body {
 #imgbas{
     width: 13%;
 }
-
 
 #left_header_div{
     display: flex;
@@ -364,7 +381,6 @@ body {
     
 }
 
-
 #affichage_profil_ens > h3{
     margin-bottom: 1em;
 }
@@ -372,7 +388,6 @@ body {
 #affichage_profil_ens > form > input{
     margin-bottom: 1em;
 }
-
 
 #conteneur_groupes{
     padding: 2em;
@@ -385,3 +400,16 @@ body {
 
     display: flex;
 }
+
+#conteneur_lien_ajout_groupe{
+    text-align: center;
+    padding-top: 2em;
+    width: 100%;
+}
+
+.CONTENEUR_INFO_DETAIL > div{
+    max-width: 20%;
+
+}
+
+.CONTENEUR_INFO_DETAIL{}
