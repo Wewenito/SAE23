@@ -7,7 +7,10 @@
 
 #BLOCK_SIDE{
     width: 80%;
-    margin: 0px 0px 0px 0px;
+    padding: 8%;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 2%;
 }
 
 #span_liste:hover{
@@ -40,4 +43,130 @@
 
 #liste{
     width: 100% !important;
+}
+
+.delete {
+    background-color: #e21a1a;
+    color: #ffffff;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    animation: spin 0.1s infinite, colorChange 0.5s infinite;
+  }
+
+  .delete:hover {
+    background-color: #ffffff;
+    color: #e21a1a;
+  }
+  
+  .delete:active {
+    background-color: #000000;
+    color: #ffffff;
+  }
+
+
+  .edit {
+    background-color: #e29c1a;
+    color: #ffffff;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    animation: spin 0.1s infinite, colorChange 0.5s infinite;
+  }
+  
+  .edit:hover {
+    background-color: #ffffff;
+    color: #e29c1a;
+  }
+  
+  .edit:active {
+    background-color: #000000;
+    color: #ffffff;
+  }
+
+
+ .ajouter {
+    background-color: #1a84e7;
+    color: #ffffff;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    animation: spin 0.1s infinite, colorChange 0.5s infinite;
+    margin-top: 0%;
+    margin-bottom: 6%;
+    margin-right: 40%;
+    margin-left: 40%;
+  }
+  
+ .ajouter:hover {
+    background-color: #ffffff;
+    color: #1a84e7;
+  }
+  
+ .ajouter:active {
+    background-color: #000000;
+    color: #ffffff;
+  }
+
+
+  .submitbutton {
+    background-color: #1a84e7;
+    color: #ffffff;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    animation: spin 0.1s infinite, colorChange 0.5s infinite;
+    margin-top: 0%;
+    margin-bottom: 6%;
+    margin-right: 40%;
+    margin-left: 40%;
+  }
+  
+ .submitbutton:hover {
+    background-color: #ffffff;
+    color: #1a84e7;
+  }
+  
+ .submitbutton:active {
+    background-color: #000000;
+    color: #ffffff;
+  }
+
+
+  .FORMULAIRE{
+    margin: 20px;
+  }
+
+
+  .DISPLAYED_INFO{
+    text-align: center;
+    width: 100%
+  }
+
+
+  #choixliste{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+
+  #submitbutton{
+    text-align: center;
 }
