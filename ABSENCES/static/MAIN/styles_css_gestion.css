@@ -170,3 +170,55 @@
   #submitbutton{
     text-align: center;
 }
+
+
+
+
+  /*CHANGEMENTS FAITS AU HTML POUR TOUS LES FICHIERS:
+
+
+ - ON REMPLACE :
+  <a href="http://176.153.132.17:5/Ajouter_etudiants/"><button class="ajouter">Ajouter</button></a>
+
+  PAR :
+  <button type="submit" class="ajouter">SUPPRIMER</button>
+
+
+ - ON REMPLACE :
+  <button type="submit" class="btn btn-danger">SUPPRIMER</button>
+
+  PAR :
+  <button type="submit" class="delete">SUPPRIMER</button>
+
+
+ - ON REMPLACE :
+  <button type="submit" class="btn btn-warning">EDITER</button>
+
+  PAR :
+  <button type="submit" class="edit">EDITER</button>
+
+
+
+
+
+- On rajoute pour CHAQUE input la classe "form-control" de bootstrap.
+
+
+
+
+
+  - ON RAJOUTE la classe .FORMULAIRE à chaque div du DE <div class="tab-content" id="nav-tabContent"> : 
+
+  Exemple :
+ON REMPLACE :
+  <div>
+    <h5>Prénom :</h5>
+    <p>papa</p>
+  </div>
+
+ PAR :<div class="tab-content" id="nav-tabContent">
+  <div class="FORMULAIRE">
+    <h5>Prénom :</h5>
+    <p>papa</p>
+  </div>
+
