@@ -172,6 +172,61 @@
 }
 
 
+#span_liste:hover {
+    text-decoration: underline;
+}
+
+#span_liste {
+    font-size: 20px !important;
+}
+
+.liste_nav:hover {
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    text-decoration: underline;
+}
+
+.liste_nav {
+    margin-left: 4%;
+}
+
+#navigator_side {
+    min-height: 100vh;
+    width: 20%;
+    margin: 0;
+    background: linear-gradient(#c9c8c8, #f2f2f2); 
+    border-right:#757575 solid;
+}
+
+#navigator_side > div {
+    min-height: 100vh;
+    width: 100%;
+}
+
+.paragliste{
+    text-align: center;
+}
+
+.titreliste{
+    text-align: center;
+    font-size: 30px;
+}
+
+.imgsb{
+   text-align: center;
+}
+
+.titrelink{
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.liste-elements{
+    list-style-type: none;
+}
+
+
+
 
 
   /*CHANGEMENTS FAITS AU HTML POUR TOUS LES FICHIERS:
@@ -222,3 +277,189 @@ ON REMPLACE :
     <p>papa</p>
   </div>
 
+
+
+
+
+
+
+
+
+TOUS LES CHANGEMENTS APPLIQUÉS ICI (de la balise <a> à la fin de la section pour éviter les conflits) 
+--> ICI FICHIER GESTION ETUDIANTS HTML
+
+
+
+exemple :
+
+
+
+
+
+
+
+  <a href="http://176.153.132.17:5/Ajouter_etudiants/"><button class="ajouter">AJOUTER</button></a>
+
+<div class="row" id="liste">
+    <div class="col-4" id="choixliste">
+      <div class="list-group" id="list-tab" role="tablist">
+        
+        <a class="list-group-item list-group-item-action DISPLAYED_INFO active" id="1" data-toggle="list" href="http://176.153.132.17:5/modifier_etudiant/2/" role="tab" aria-controls="home" aria-selected="true">pierre</a>
+        
+        <a class="list-group-item list-group-item-action DISPLAYED_INFO" id="2" data-toggle="list" href="http://176.153.132.17:5/modifier_etudiant/2/" role="tab" aria-controls="home">JEAN</a>
+        
+        <a class="list-group-item list-group-item-action DISPLAYED_INFO" id="6" data-toggle="list" href="http://176.153.132.17:5/modifier_etudiant/2/" role="tab" aria-controls="home">zef</a>
+        
+      </div>
+    </div>
+    <div class="col-8 " id="infoliste">
+      <div class="tab-content" id="nav-tabContent">
+        
+        <div class="tab-pane fade show CONTENEUR_INFO_DETAIL active" id="follow_up_1" role="tabpanel" aria-labelledby="list-home-list" style="display: flex;">
+            <div class="FORMULAIRE">
+                <h5>Nom :</h5>
+                <p>pierre</p>
+            </div>
+            <div class="FORMULAIRE">
+                <h5>Prénom :</h5>
+                <p>papa</p>
+            </div>
+            <div class="FORMULAIRE">
+                <h5>Mail :</h5>
+                <p>pierre@mail.com</p>
+            </div>
+            <div class="FORMULAIRE">
+                <h5>Groupe :</h5>
+                <p>RT12</p>
+            </div>
+            <div class="FORMULAIRE">
+                <h5>Photo :</h5>
+                <p>HDHDNXJ</p>
+            </div>
+            <div class="FORMULAIRE">
+                <h5>description :</h5>
+                <p>KDSK LDNS</p>
+            </div>
+            <div>
+                <h5>Adresse :</h5>
+                <p>CKLBDV FQD BFHJQ</p>
+            </div>
+            <div class="FORMULAIRE">
+                <h5>Téléphone :</h5>
+                <p>658508893</p>
+            </div>
+            <div class="FORMULAIRE">
+                <h5>Boursier :</h5>
+                <p>True</p>
+            </div>
+            <form action="http://176.153.132.17:5/afficher_modif_form/1/" method="post">
+              <input type="hidden" name="csrfmiddlewaretoken" value="OBOIkQlol3sReej0vfyRq7umyl9nVoaxEJTPc7ZiD9YfuBBOCF7B9wfGVjX1d4Og">
+              <button type="submit" class="edit">EDITER</button>
+            </form>
+            <form action="http://176.153.132.17:5/supprimer_etudiant/1/" method="post">
+              <input type="hidden" name="csrfmiddlewaretoken" value="OBOIkQlol3sReej0vfyRq7umyl9nVoaxEJTPc7ZiD9YfuBBOCF7B9wfGVjX1d4Og">
+              <button type="submit" class="delete">SUPPRIMER</button>
+            </form>
+          
+        </div>
+        
+        <div class="tab-pane fade show CONTENEUR_INFO_DETAIL" id="follow_up_2" role="tabpanel" aria-labelledby="list-home-list" style="display: none;">
+            <div class="FORMULAIRE">
+                <h5>Nom :</h5>
+                <p>JEAN</p>
+            </div>
+            <div class="FORMULAIRE">
+                <h5>Prénom :</h5>
+                <p>PAUL SARTRE</p>
+            </div>
+            <div class="FORMULAIRE">
+                <h5>Mail :</h5>
+                <p>JP@maildub.com</p>
+            </div>
+            <div class="FORMULAIRE">
+                <h5>Groupe :</h5>
+                <p>RT3</p>
+            </div class="FORMULAIRE">
+            <div>
+                <h5>Photo :</h5>
+                <p>url://cacacacacaca</p>
+            </div> 
+            <div class="FORMULAIRE">
+                <h5>description :</h5>
+                <p>ofekdpnqv</p>
+            </div>
+            <div class="FORMULAIRE">
+                <h5>Adresse :</h5>
+                <p>14 champs des lilas</p>
+            </div>
+            <div class="FORMULAIRE">
+                <h5>Téléphone :</h5>
+                <p>None</p>
+            </div>
+            <div class="FORMULAIRE">
+                <h5>Boursier :</h5>
+                <p>False</p>
+            </div>
+            <form action="http://176.153.132.17:5/afficher_modif_form/2/" method="post">
+              <input type="hidden" name="csrfmiddlewaretoken" value="OBOIkQlol3sReej0vfyRq7umyl9nVoaxEJTPc7ZiD9YfuBBOCF7B9wfGVjX1d4Og">
+              <button type="submit" class="btn btn-warning">EDITER</button>
+            </form>
+            <form action="http://176.153.132.17:5/supprimer_etudiant/2/" method="post">
+              <input type="hidden" name="csrfmiddlewaretoken" value="OBOIkQlol3sReej0vfyRq7umyl9nVoaxEJTPc7ZiD9YfuBBOCF7B9wfGVjX1d4Og">
+              <button type="submit" class="btn btn-danger">SUPPRIMER</button>
+            </form>
+          
+        </div>
+        
+        <div class="tab-pane fade show CONTENEUR_INFO_DETAIL" id="follow_up_6" role="tabpanel" aria-labelledby="list-home-list" style="display: none;">
+            <div class="FORMULAIRE">
+                <h5>Nom :</h5>
+                <p>zef</p>
+            </div>
+            <div class="FORMULAIRE">
+                <h5>Prénom :</h5>
+                <p>zefezf</p>
+            </div>
+            <div class="FORMULAIRE">
+                <h5>Mail :</h5>
+                <p>zqre@e.com</p>
+            </div>
+            <div class="FORMULAIRE">
+                <h5>Groupe :</h5>
+                <p>RT12</p>
+            </div>
+            <div class="FORMULAIRE">
+                <h5>Photo :</h5>
+                <p>qrg</p>
+            </div>
+            <div class="FORMULAIRE">
+                <h5>description :</h5>
+                <p>qzrsgaet</p>
+            </div>
+            <div class="FORMULAIRE">
+                <h5>Adresse :</h5>
+                <p>zf</p>
+            </div>
+            <div class="FORMULAIRE">
+                <h5>Téléphone :</h5>
+                <p>None</p>
+            </div>
+            <div class="FORMULAIRE">
+                <h5>Boursier :</h5>
+                <p>True</p>
+            </div>
+            <form action="http://176.153.132.17:5/afficher_modif_form/6/" method="post">
+              <input type="hidden" name="csrfmiddlewaretoken" value="OBOIkQlol3sReej0vfyRq7umyl9nVoaxEJTPc7ZiD9YfuBBOCF7B9wfGVjX1d4Og">
+              <button type="submit" class="btn btn-warning">EDITER</button>
+            </form>
+            <form action="http://176.153.132.17:5/supprimer_etudiant/6/" method="post">
+              <input type="hidden" name="csrfmiddlewaretoken" value="OBOIkQlol3sReej0vfyRq7umyl9nVoaxEJTPc7ZiD9YfuBBOCF7B9wfGVjX1d4Og">
+              <button type="submit" class="btn btn-danger">SUPPRIMER</button>
+            </form>
+          
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</section></div>
