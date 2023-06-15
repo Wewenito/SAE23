@@ -17,15 +17,15 @@
       <div class="tab-content" id="nav-tabContent">
         {% for enseignant in enseignant %}
         <div class="tab-pane fade show CONTENEUR_INFO_DETAIL" id="follow_up_{{ enseignant.id }}" role="tabpanel" aria-labelledby="list-home-list">
-            <div>
+            <div class='FORMULAIRE'>
                 <h5>Nom :</h5>
                 <p>{{ enseignant.nom }}</p>
             </div>
-            <div>
+            <div class='FORMULAIRE'>
                 <h5>Prénom :</h5>
                 <p>{{ enseignant.prenom }}</p>
             </div>
-            <div>
+            <div class='FORMULAIRE'>
                 <h5>Mail :</h5>
                 <p>{{ enseignant.mail }}</p>
             </div>
@@ -35,7 +35,7 @@
             </form>
             <form action="{% url 'ABSENCES:afficher_modif_form_ens' enseignant.id %}" method="post">
               {% csrf_token %}
-              <button type="submit" class="btn btn-warning">EDITER</button>
+              <button type="submit" class="edit">EDITER</button>
             </form>
         </div>
         {% endfor %}
