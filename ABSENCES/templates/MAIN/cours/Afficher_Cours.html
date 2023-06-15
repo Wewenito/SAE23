@@ -4,7 +4,7 @@
 
 {% block SIDE_GESTION %}
 
-<a href="{% url 'ABSENCES:Ajouter_cour' %}"><button class="btn btn-primary">Ajouter un cours</button></a>
+<a href="{% url 'ABSENCES:Ajouter_cour' %}"><button class="ajouter">AJOUTER</button></a>
 
 <div class="row" id="liste">
     <div class="col-4" id="choixliste">
@@ -18,33 +18,33 @@
       <div class="tab-content" id="nav-tabContent">
         {% for cours in cours %}
         <div class="tab-pane fade show CONTENEUR_INFO_DETAIL" id="follow_up_{{ cours.id }}" role="tabpanel" aria-labelledby="list-home-list">
-            <div>
+            <div class='FORMULAIRE'>
                 <h5>Intitulé :</h5>
                 <p>{{ cours.Titre_cours }}</p>
             </div>
-            <div>
+            <div class='FORMULAIRE'>
                 <h5>Enseignant :</h5>
                 <p>{{ cours.enseignant.nom }}</p>
             </div>
-            <div>
+            <div class='FORMULAIRE'>
                 <h5>Groupe :</h5>
                 <p>{{ cours.Groupes.nom }}</p>
             </div>
-            <div>
+            <div class='FORMULAIRE'>
                 <h5>Date :</h5>
                 <p>{{ cours.Date }}</p>
             </div>
-            <div>
+            <div class='FORMULAIRE'>
                 <h5>Durée :</h5>
                 <p>{{ cours.Duree }}</p>
             </div>
             <form action="{% url 'ABSENCES:Supprimer_cour' cours.id %}" method="post">
               {% csrf_token %}
-              <button type="submit" class="btn btn-danger">SUPPRIMER</button>
+              <button type="submit" class="delete">SUPPRIMER</button>
             </form>
             <form action="{% url 'ABSENCES:afficher_modif_form_cour' cours.id %}" method="post">
               {% csrf_token %}
-              <button type="submit" class="btn btn-warning">EDITER</button>
+              <button type="submit" class="edit">EDITER</button>
             </form>
         </div>
         {% endfor %}
