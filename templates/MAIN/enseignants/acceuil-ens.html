@@ -1,0 +1,44 @@
+{% extends 'MAIN/mp_template.html' %}
+{% load static %}
+{% block HEAD %}
+<link rel="stylesheet" type="text/css" href="{% static 'MAIN/stylespens.css' %}">
+{% endblock %}
+{% block content %}
+    <div class='tout'>
+        <div id="absences">
+        
+            {% for absences in absences %}
+                {% if absences.Inspection_terminee == False %}
+                    <div class="cases" id="case1">
+                        <div id="justif">
+                            <div id="justificatif">
+                                <div id="titrejustif">
+                                    <h1> {{ absences.Etudiant.nom}} {{ absences.Etudiant.prenom}} </h1>
+                                    <h2> {{ absences.Etudiant.groupe.nom}} <h2>
+                                </div>
+
+                                <div id="txtjustif">
+                                    <span style="display: flex;">
+                                        <p>Cour : </p>
+                                        <a href="{% url 'ABSENCES:modifier_cour' absences.Cours.id %}"><p> {{ absences.Cours.Titre_cours}} </p></a>
+                                    </span>
+                                    <span style="display: flex;">
+                                        <p>Explication : </p>
+                                        <p> {{ absences.Explication }} </p>
+                                    </span>
+                                </div>
+                            </div>
+                            <div id="basfichier">
+                                <form action="{% url 'ABSENCES:afficher_etude_absence' absences.id %}" method="post">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn btn-primary">ETUDIER</button>
+                                  </form>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>  
+    </div>
+
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'MAIN/mp_template.html' %}
+{% load static %}
+
+{% block HEAD %}
+<link rel="stylesheet" type="text/css" href="{% static 'MAIN/stylespe.css' %}">
+{% endblock %}
+
+{% block content %}
+
+
+<form method="POST" id="formAbsence" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.Cours.label_tag }}
+    <select name="{{ form.Cours.html_name }}">
+        {% for option in form.Cours.field.queryset %}
+            <option value="{{ option.pk }}">{{ option.Titre_cours }}</option>
+        {% endfor %}
+    </select>
+    {{ form.Explication.label_tag }}
+    {{ form.Explication }}
+    {{ form.Justif_url.label_tag }}
+    <input type="file" name="{{ form.Justif_url.html_name }}">
+
+    <input type="hidden" name="Etudiant" value="{{ request.user.id }}">
+    <input type="hidden" name="Justifie_bool" value="False">
+    <input type="hidden" name="Checke_par" value="">
+    <input type="hidden" name="Commentaire_enseignant" value="">
+    <input type="hidden" name="Inspection_terminee" value="False">
+
+    
+    <button type="submit" class="btn btn-primary">Ajouter la demande d'absence</button>
+</form>
+
+
+
+{% endblock %}

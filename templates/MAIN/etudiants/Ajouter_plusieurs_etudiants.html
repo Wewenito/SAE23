@@ -1,0 +1,11 @@
+{% extends 'MAIN/enseignants/gestion_ens.html' %}
+{% load static %}
+
+{% block SIDE_GESTION %}
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" name="json_file" accept=".json">
+    <button type="submit">AJOUTER LES ETUDIANTS</button>
+</form>
+
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'MAIN/enseignants/gestion_ens.html' %}
+{% load static %}
+
+{% block SIDE_GESTION %}
+<form method="POST" id="formetu">
+    {% csrf_token %}
+    <div class="form-group col-6">
+        <label for="id_photo">Intitulé : </label>
+        {{ form.Titre_cours }}
+    </div>
+    <div class="form-group col-6">
+        <label for="id_photo">Enseignant : </label>
+        {{ form.enseignant }}
+    </div>
+    <div class="form-group col-6">
+        <label for="id_photo">Groupe : </label>
+        {{ form.Groupes }}
+    </div>
+    <div class="form-group col-6">
+        <label for="id_photo">Date :</label>
+        <input type="date" name="Date" id="id_photo">
+    </div>
+    <div class="form-group col-6">
+        <label for="id_photo">Duree :</label>
+        <input type="time" name="Duree" id="id_photo">
+    </div>
+    <div id="submitbutton">
+        <br>
+        <button type="submit" class="btn btn-primary">Valider</button>
+    </div>
+</form>
+{% endblock %}

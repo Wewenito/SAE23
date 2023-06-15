@@ -1,0 +1,48 @@
+{% extends 'MAIN/mp_template.html' %}
+
+
+{% load static %}
+
+{% block HEAD %}
+
+{% endblock %}
+
+{% block content %}
+
+<h1>PAGE DE PROFIL ETUDIANT</h1>
+
+<p>{{ etudiant.nom }}</p>
+
+<div id="profil-etu">
+    <span>
+        <p>Nom :</p>
+        <p>{{ etudiant.nom }}</p>
+    </span>
+    <span>
+        <p>Prenom :</p>
+        <p>{{ etudiant.prenom }}</p>
+    </span>
+    <span>
+        <p>Groupe : </p>
+        <p>{{ etudiant.groupe.nom }}</p>
+    </span>
+    <span>
+        <p></p>
+        <p>{{ etudiant.description }}</p>
+    </span>
+    <span>
+        <p></p>
+        <p>{{ etudiant.adresse }}</p>
+    </span>
+    <span>
+        <p></p>
+        <p>{{ etudiant.telephone }}</p>
+    </span>
+    <span>
+        <p></p>
+        <p>{{ etudiant.boursier }}</p>
+    </span>
+    
+</div>
+
+{% endblock %}

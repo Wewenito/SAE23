@@ -1,0 +1,12 @@
+{% extends 'MAIN/enseignants/gestion_ens.html' %}
+
+{% load static %}
+{% block SIDE_GESTION %}
+
+<form method="POST">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit" class="btn btn-primary">Modifier</button>
+</form>
+
+{% endblock %}
