@@ -279,7 +279,21 @@ ON REMPLACE :
 
 
 
+on rajoute à tous les inputs la classe 'form-control' de bootstrap
+exemple dans le fichier Ajouter-Enseignants
 
+ON REMPLACE :
+    <div class="form-group col-6" class='FORMULAIRE'>
+        <label for="id_nom">Nom :</label>
+        <input type="text" name="nom" id="id_nom">
+    </div>
+
+
+PAR :
+<div class="form-group col-6" class='FORMULAIRE'>
+    <label for="id_nom">Nom :</label>
+    <input class='form-control' type="text" name="nom" id="id_nom">
+</div>
 
 
 
@@ -290,7 +304,7 @@ TOUS LES CHANGEMENTS APPLIQUÉS ICI (de la balise <a> à la fin de la section po
 
 
 
-exemple :
+(copie colle)
 
 
 
