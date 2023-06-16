@@ -1,32 +1,54 @@
-"""
-URL configuration for GESTION_ABSENCES project.
+from django.urls import path
 
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/4.2/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
+from . import views
 
-
-from django.contrib import admin
-from django.urls import path, include
-from django.views.generic.base import TemplateView
+app_name = 'ABSENCES'
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('home/', views.home, name='home'),
+
+    path('EasterEgg/', views.EasterEgg, name='EasterEgg'),
+
+    path('signin/',views.signin, name='signin'),
+
+    #///////////////////////////////////////////////etudiant////////////////////////////////////////////////////
+
+    path('gestion_etudiants/<str:arg1>/', views.gestion_etudiants, name='gestion_etudiants'),
+    path('acceuil_etu/<int:id>/', views.acceuil_etu, name='acceuil_etu'),
+    path('Ajouter_absence/', views.Ajouter_absence, name='Ajouter_absence'),
+    path('afficher_etude_absence/<int:id>/', views.afficher_etude_absence, name='afficher_etude_absence'),
+    path('etudier_absence/<int:id>/', views.etudier_absence, name='etudier_absence'),
 
 
-    path("accounts/", include("django.contrib.auth.urls")),
-    path('', TemplateView.as_view(template_name='MAIN/mp.html'), name='page_principale'),
-    path('', include('ABSENCES.urls')),
-    
+    #/////////////////////////////////////////////enseignant////////////////////////////////////////////////////
+
+    path('Afficher_etudiants/', views.Afficher_etudiants, name='Afficher_etudiants'),
+    path('Ajouter_etudiants/', views.Ajouter_etudiants, name='Ajouter_etudiants'),
+    path('supprimer_etudiant/<int:id>/', views.supprimer_etudiant, name='supprimer_etudiant'),
+    path('modifier_etudiant/<int:id>/', views.modifier_etudiant, name='modifier_etudiant'),
+    path('afficher_modif_form/<int:id>/', views.afficher_modif_form, name='afficher_modif_form'),
+
+
+    path('profil/update_mail_ens/<int:id>/', views.update_mail_ens, name='update_mail_ens'),
+
+    path('Gestion_enseignants/<str:arg1>/', views.Gestion_enseignants, name='Gestion_enseignants'), 
+
+    path('Afficher_groupes/', views.Afficher_groupes, name='Afficher_groupes'),
+    path('ajout_groupe/', views.ajout_groupe, name='ajout_groupe'),
+    path('suppression_groupe/<int:id>/', views.suppression_groupe, name='suppression_groupe'),
+    path('modification_groupe/<int:id>/', views.modification_groupe, name='modification_groupe'),
+
+    path('Ajouter_cour/', views.Ajouter_cour, name='Ajouter_cour'),
+    path('Afficher_cours/', views.Afficher_cours, name='Afficher_cours'),
+    path('Supprimer_cour/<int:id>/', views.Supprimer_cour, name='Supprimer_cour'),
+    path('afficher_modif_form_cour/<int:id>/', views.afficher_modif_form_cour, name='afficher_modif_form_cour'),
+    path('modifier_cour/<int:id>/', views.modifier_cour, name='modifier_cour'),
+
+
+    path('Afficher_enseignants/', views.Afficher_enseignants, name='Afficher_enseignants'),
+    path('Ajouter_enseignants/', views.Ajouter_enseignants, name='Ajouter_enseignants'),
+    path('Supprimer_enseignant/<int:id>/', views.Supprimer_enseignant, name='Supprimer_enseignant'),
+    path('afficher_modif_form_ens/<int:id>/', views.afficher_modif_form_ens, name='afficher_modif_form_ens'),
+    path('modifier_enseignant/<int:id>/', views.modifier_enseignant, name='modifier_enseignant'),
+
 ]
-
