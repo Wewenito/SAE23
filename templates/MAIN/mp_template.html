@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+        {% load static %}
+
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="{% static 'BOOTSTRAP/js_BOOTSTRAP/bootstrap.min.js' %}"></script>
+        <link rel="stylesheet" type="text/css" href="{% static 'BOOTSTRAP/css_BOOTSTRAP/bootstrap.min.css' %}" > 
+        <link rel="stylesheet" type="text/css" href="{% static 'MAIN/stylesmp.css' %}">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+        {% block HEAD %}
+        {% endblock %}
+
+        <title>GESTION ABSENCES [HOME]</title>
+  </head>
+
+  <body>
+
+    <header class="navbar navbar-dark bg-dark" id='headermainp'>
+      {% block HEADER %}
+        {% if user.is_authenticated %}
+          {% for group in user.groups.all %}
+            {% if group.name == 'ETUDIANTS' %}
+              <div id="left_header_div">
+                <a href="{% url 'logout' %}"><button type="button" id="MENU_BUTTON">Se déconnecter</button></a>
+                <div id="dropdownlinks" class="LOGOUT_BUTTON">
+                  <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    MENU</a>
+                  <div class="dropdown">
+
+                    
+                    <div class="dropdown-menu"  aria-labelledby="dropdownMenuLink">
+                      <a class="dropdown-item" href="{% url 'ABSENCES:acceuil_etu' user.id %}">GESTION ABSENCES</a>
+                      <hr>
+                      <a class="dropdown-item" href="{% url 'ABSENCES:home' %}">PAGE PRINCIPALE</a>
+                    </div>
+                  </div>
+                
+                </div>
+              </div>
+              <div id="title_header_div">
+                <span class='titre'> Dub STEM Management School </span>
+              </div>
+              <div id="right_header_div">
+                <a href="{% url 'ABSENCES:gestion_etudiants' arg1='PROFIL' %}"> <img src="{% static 'MAIN/IMAGES/etudiant.jpg' %}" type='image/png' class="rounded-circle" id='userimg'></a> 
+              </div>
+            {% elif group.name == 'ENSEIGNANTS' %}
+              <div id="left_header_div">
+                <a href="{% url 'logout' %}"><button type="button" id="MENU_BUTTON">Se déconnecter</button></a>
+                <div class="LOGOUT_BUTTON">
+                  <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    MENU</a>
+                  <div class="dropdown">
+
+                    
+                    <div class="dropdown-menu"  aria-labelledby="dropdownMenuLink">
+                      <a class="dropdown-item" href="{% url 'ABSENCES:Gestion_enseignants' arg1='ACCEUIL' %}">ACCEUIL</a>
+                      <hr>
+                      <a class="dropdown-item" href="{% url 'ABSENCES:Gestion_enseignants' arg1='GESTION' %}">GESTION</a>
+                      <hr>
+                      <a class="dropdown-item" href="{% url 'ABSENCES:Gestion_enseignants' arg1='PROFIL' %}">PROFIL</a>
+                    </div>
+                  </div>
+                
+                </div>
+              </div>
+              <div id="title_header_div">
+                <span class='titre'> Dub STEM Management School </span>
+              </div>
+              <div id="right_header_div">
+                <a href="#"> <img src="{% static 'MAIN/IMAGES/enseignant.png' %}" type='image/png' class="rounded-circle" id='userimg'></a> 
+              </div>
+            {% elif group.name == 'ADMIN' %}
+              <div id="left_header_div">
+              
+              </div>
+              <div id="title_header_div">
+                <span class='titre'> Dub STEM Management School </span>
+              </div>
+              <div id="right_header_div">
+                <a href='#'> <img src="{% static 'MAIN/IMAGES/enseignant.png' %}" type='image/png' class="rounded-circle" id='userimg'> </a> 
+              </div>
+            {% endif %}
+          {% endfor %}
+        {% else %}
+          <div id="left_header_div">
+            <a href="{% url 'ABSENCES:signin' %}"><button type="button" class="btn btn-primary">Se connecter</button></a>
+          </div>
+          <div id="title_header_div">
+            <span class='titre'> Dub STEM Management School </span>
+          </div>
+          <div id="right_header_div">
+            <a href="{% url 'ABSENCES:home' %}"> <img src="{% static 'MAIN/IMAGES/user_default.png' %}" type='image/png' class="rounded-circle" id='userimg'> </a> 
+          </div>
+
+        {% endif %}
+      {% endblock %}
+    </header>
+
+    {% block content %}
+
+    {% endblock %}
+
+    <div>
+      <nav class="navbar navbar-dark bg-primary" id="navbardown">
+            <div class="basenbas">
+                <div class="fin">
+                  <h4>Contact</h4>
+                  <p>Adresse : 123 BassDropAvenue - Roubaix France</p>
+                  <p>Téléphone : +33 03 68 91 45 18</p>
+                  <p>Email : dubstem@mail.com</p>
+                </div>
+                <div class="fin">
+                  <h4>Réseaux sociaux</h4>
+                    <a href="{% url 'ABSENCES:EasterEgg' %}"> <img src="{% static 'MAIN/IMAGES/facebook.png' %}" type='image/png' class="imgbas"> </a> 
+                    <a href='https://instagram.com'> <img src="{% static 'MAIN/IMAGES/instagram.png' %}" type='image/png' class="imgbas"> </a> 
+                    <a href='https://twitter.com'> <img src="{% static 'MAIN/IMAGES/twitter.png' %}" type='image/png' id="imgbas"> </a> 
+                </div>
+            </div>
+                <div class="fin" id="enbas">
+                  <p id="copyright">&copy; 2023 DUB STEM MANAGEMNT SCHOOL</p>
+            </div>
+      </nav>
+  </div>
+
+
+  </body> 
+
+</html> 

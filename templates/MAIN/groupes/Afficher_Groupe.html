@@ -1,0 +1,31 @@
+{% extends 'MAIN/enseignants/gestion_ens.html' %}
+{% load static %}
+
+{% block SIDE_GESTION %}
+
+<div id="conteneur_lien_ajout_groupe">
+    <a href="{% url 'ABSENCES:ajout_groupe' %}" id="lien_ajout_groupe"><button class="btn ajouter">Ajouter un nouveau groupe</button></a>
+</div>
+<div id="conteneur_groupes" class="default_background_forms_etc">
+    {% for groupe in groupes %}
+        <div class="conteneur_groupe">
+            <h4>{{ groupe.nom }}</h4>
+            <form action="{% url 'ABSENCES:suppression_groupe' groupe.id %}" method="post" id="delete-form-{{ groupe.id }}">
+                {% csrf_token %}
+                <button class="btn btn-danger" onclick="confirmDelete('{{ groupe.id }}')">SUPPRIMER</button>
+            </form>
+            <a href="{% url 'ABSENCES:modification_groupe' groupe.id %}"><button class="btn btn-warning">EDITER</button></a>
+        </div>
+    {% endfor %}
+</div>
+<script>
+    function confirmDelete(groupeId) {
+        if (confirm("Êtes-vous bien sur de vouloir supprimer ce groupe ?")) {
+            document.getElementById('delete-form-' + groupeId).submit();
+        }else{
+            event.preventDefault();
+        }
+    }
+</script>
+
+{% endblock %}

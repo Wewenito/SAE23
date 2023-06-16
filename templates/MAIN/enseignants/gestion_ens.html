@@ -1,0 +1,55 @@
+{% extends 'MAIN/mp_template.html' %}
+
+{% load static %}
+{% block HEAD %}
+<link rel="stylesheet" type="text/css" href="{% static 'MAIN/styles_css_gestion.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'MAIN/stylespe.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div id="main_cadre">
+  <section id="navigator_side">
+    <div class="d-flex flex-column flex-shrink-0 p-3">
+        <li class="liste_nav liste-elements liste_nav liste-elements">
+            <a href="{% url 'ABSENCES:home' %}" class="nav-link titrelink" style="color: black;" aria-current="page">
+              <svg class="bi me-2" width="16" height="16"><use xlink:href=""></use></svg><div class="imgsb"><img id="imgsvg" src="{% static 'MAIN/IMAGES/HOME.svg' %}" type='image/svg' class="rounded-circle" id='userimg'></div><p class="titreliste">HOME</p>
+            </a>
+        </li>
+        </a>
+        <hr>
+        <ul class="nav nav-pills flex-column mb-auto">
+          <li class="liste_nav liste-elements">
+            <a href="{% url 'ABSENCES:Afficher_cours' %}" class="nav-link" style="color: black;" aria-current="page">
+              <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"></use></svg><div class="imgsb"><img id="imgsvg" src="{% static 'MAIN/IMAGES/COURS.svg' %}" type='image/svg' class="rounded-circle" id='userimg'></div><p class="paragliste">COURS</p>
+            </a>
+          </li>
+          <li class="liste_nav liste-elements"> 
+            <a href="{% url 'ABSENCES:Afficher_groupes' %}" class="nav-link" style="color: black;">
+              <svg class="bi me-2" width="16"  height="16"><use xlink:href="#speedometer2"></use></svg><div class="imgsb"><img id="imgsvg" src="{% static 'MAIN/IMAGES/GROUPE.svg' %}" type='image/svg' class="rounded-circle" id='userimg'></div><p class="paragliste">GROUPES</p>
+            </a>
+          </li>
+          <li class="liste_nav liste-elements">
+            <a href="{% url 'ABSENCES:Afficher_etudiants' %}" class="nav-link" style="color: black;">
+              <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"></use></svg><div class="imgsb"><img id="imgsvg" src="{% static 'MAIN/IMAGES/ETUDIANT.svg' %}" type='image/svg' class="rounded-circle" id='userimg'></div><p class="paragliste">ETUDIANTS</p>
+            </a>
+          </li>
+          <li class="liste_nav liste-elements">
+            <a href="{% url 'ABSENCES:Afficher_enseignants' %}" class="nav-link" style="color: black;">
+              <svg class="bi me-2" width="16" height="16"><use xlink:href="#grid"></use></svg><div class="imgsb"><img id="imgsvg" src="{% static 'MAIN/IMAGES/ENSEIGNANT.svg' %}" type='image/svg' class="rounded-circle" id='userimg'></div><p class="paragliste">ENSEIGNANTS</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+</section>
+    <section id="BLOCK_SIDE">
+        {% block SIDE_GESTION %}
+        {% endblock %}
+    </section>
+</div>
+
+
+
+
+{% endblock %}
+
