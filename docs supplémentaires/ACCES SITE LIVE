@@ -1,0 +1,38 @@
+Si pour une X ou Y raison des difficultées sont encontrées pour lancer le site en local, merci de vous rendre sur ce lien pour explorer la version live.
+
+http://176.153.132.17:5
+
+Vous pouvez vous connecter en tant qu'élève avec les crédentiels suivant : 
+
+peter@mail.com
+
+toto
+
+Et vous connecter en tant qu'enseignant avec les crédentiels suivant : 
+
+ens@mail.com
+
+toto
+
+En sachant qu'un compte enseignant permet de modifier n'importe quel table de la BDD alors qu'un élève est limité dans ses déplacements.
+
+LA BASE DE DONNEE UTILISEE DURANT LES TEST EN COURS N'A PAS PU ETRE IMPORTE SUR GITHUB !
+
+En effet les fichiers de type binaires n'y sont pas autorisés.
+
+Pour en avoir une copie, merci de contacter soit : 
+
+gabriel.garrone@uha.fr
+
+owen.pichot@uha.fr
+
+Ou via discord : 
+
+Gabriel => missclick.net
+Owen => walt_whitmann
+
+Note concernant les comptes rendus / procédures de la SAE :
+
+Le sujet laissant un peu libre à interpretation, nous avons fait le choix de faire deux procédures.
+L'une se concentre uniquement sur l'aspect purement technique du déploiement du projet sur un serveur.
+L'autre se concentre davantage sur l'aspect global de la création d'un projet django.
